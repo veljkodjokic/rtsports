@@ -100,7 +100,7 @@
         var hls = new Hls();
         hls.loadSource('http://91.121.72.155/hls/stream.m3u8');
         hls.attachMedia(video);
-        hls.on(Hls.Events.MANIFEST_PARSED,finction() {
+        hls.on(Hls.Events.MANIFEST_PARSED,function() {
             video.play();
         });
     }
