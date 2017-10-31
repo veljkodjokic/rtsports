@@ -20,9 +20,9 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/game1' , function(){
-	return view('player1.blade.php');
+	return view('player1');
 });
 
 Route::get('/game2' , function(){
-	return view('player2.blade.php');
+	return view('player2');
 });
