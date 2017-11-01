@@ -74,24 +74,25 @@
                 <div class="panel-heading">Dashboard</div>
 
                 <div class="panel-body">
-                    <video id="video" width=960 height=540 controls></video>
+                    <video id="video" src="http://91.121.72.155/hls/stream.m3u8" width=960 height=540 class="video-js" preload="auto" controls></video>
                 </div>
             </div>
         </div>
     </div>
 </div>
 
-<script src="video.js"></script>
-<script src="videojs-contrib-hls.min.js"></script>
+<link href="//vjs.zencdn.net/5.19/video-js.min.css" rel="stylesheet">
+<script src="//vjs.zencdn.net/5.19/video.min.js"></script>
+<script src="js/videojs-contrib-hls.js"></script>
 
 <script type="text/javascript">
     var player = videojs('video');
 
-player.src({
-  src: 'http://91.121.72.155/hls/stream1.m3u8',
-  type: 'application/x-mpegURL',
-  withCredentials: true
-});
+videojs(video, {html5: {
+  hls: {
+    withCredentials: true
+  }
+}});
 </script>
 </div>
 </body>
