@@ -81,7 +81,6 @@
                     @endif
 
                     <video id="video" width=960 height=540 controls>
-                        <source src="http://91.121.72.155/hls/stream1.m3u8">
                     </video>
                 </div>
             </div>
