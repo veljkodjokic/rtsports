@@ -80,26 +80,24 @@
                         </div>
                     @endif
 
-                    <video id="video" src="http://91.121.72.155/hls/stream.m3u8" width=960 height=540 class="video-js" preload="auto" controls></video>
+                    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+<video id="video"></video>
+<script>
+  if(Hls.isSupported()) {
+    var video = document.getElementById('video');
+    var hls = new Hls();
+    hls.loadSource('http://91.121.72.155/hls/stream.m3u8');
+    hls.attachMedia(video);
+    hls.on(Hls.Events.MANIFEST_PARSED,function() {
+      video.play();
+  });
+ }
+</script>
                 </div>
             </div>
         </div>
     </div>
 </div>
-
-<link href="//vjs.zencdn.net/5.19/video-js.min.css" rel="stylesheet">
-<script src="//vjs.zencdn.net/5.19/video.min.js"></script>
-<script src="js/videojs-contrib-hls.js"></script>
-
-<script type="text/javascript">
-    var player = videojs('video');
-
-videojs(video, {html5: {
-  hls: {
-    withCredentials: true
-  }
-}});
-</script>
 </div>
 
     <!-- Scripts -->
