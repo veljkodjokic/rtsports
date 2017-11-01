@@ -24,5 +24,5 @@ Route::get('/game1' , function(){
 });
 
 Route::get('/game2' , function(){
-	return view('test');
+	return File::get(public_path() . '/test.html');
 });
