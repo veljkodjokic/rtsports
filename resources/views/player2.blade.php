@@ -80,25 +80,36 @@
                         </div>
                     @endif
 
-                    <video id="video" width=960 height=540 src="http://91.121.72.155/hls/stream1.m3u8" type="application/x-mpegURL" controls></video>
+                    <video id="video" width=960 height=540 controls>
+                        <source src="http://91.121.72.155/hls/stream1.m3u8" type="application/x-mpegURL">
+                    </video>
                 </div>
             </div>
         </div>
     </div>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+<script src="//vjs.zencdn.net/5.19/video.min.js"></script>
+<script src="https://unpkg.com/videojs-contrib-hls/dist/videojs-contrib-hls.js"></script>
 
 <script type="text/javascript">
-    if(Hls.isSupported()) {
-        var video = document.getElementById('video');
-        var hls = new Hls();
-        hls.loadSource('http://91.121.72.155/hls/stream1.m3u8');
-        hls.attachMedia(video);
-        hls.on(Hls.Events.MANIFEST_PARSED,function() {
-            video.play();
-        });
+    videojs.Hls.xhr.beforeRequest = function(options) {
+    videojs(video, {html5: {
+    hls: {
+      withCredentials: true
     }
+  }});
+    
+  return options;
+};
+ 
+var player = videojs('video');
+player.ready(function() {
+  this.src({
+    src: 'http://91.121.72.155/hls/stream1.m3u8',
+    type: 'application/x-mpegURL',
+  });
+});
 </script>
 </div>
 </div>
