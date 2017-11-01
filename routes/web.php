@@ -24,5 +24,5 @@ Route::get('/game1' , function(){
 });
 
 Route::get('/game2' , function(){
-	return view('player2');
+	return view('test');
 });
