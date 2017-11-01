@@ -88,7 +88,7 @@
 </div>
 <script type="text/javascript">
 $.get("test.html", function(data){
-    $(".inflated").html(data);
+    $("#inflated").html(data);
 });
 </script>
 
