@@ -93,15 +93,6 @@
 <script src="https://unpkg.com/videojs-contrib-hls/dist/videojs-contrib-hls.js"></script>
 
 <script type="text/javascript">
-    videojs.Hls.xhr.beforeRequest = function(options) {
-    videojs(video, {html5: {
-    hls: {
-      withCredentials: true
-    }
-  }});
-    
-  return options;
-};
  
 var player = videojs('video');
 player.ready(function() {
@@ -110,7 +101,9 @@ player.ready(function() {
     type: 'application/x-mpegURL',
   });
 });
+
 </script>
+
 </div>
 </div>
 </body>
