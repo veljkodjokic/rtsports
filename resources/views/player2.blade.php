@@ -89,13 +89,19 @@
     </div>
 </div>
 
-<link href="//vjs.zencdn.net/5.19/video-js.min.css" rel="stylesheet">
-<script src="{{ asset('js/video.js') }}"></script>
-<script src="{{ asset('js/videojs-contrib-hls.js') }}"></script>
+<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+<video id="video"></video>
 <script>
-            var player = videojs('video');
-            player.play();
-        </script>
+  if(Hls.isSupported()) {
+    var video = document.getElementById('video');
+    var hls = new Hls();
+    hls.loadSource('http://91.121.72.155/hls/stream1.m3u8');
+    hls.attachMedia(video);
+    hls.on(Hls.Events.MANIFEST_PARSED,function() {
+      video.play();
+  });
+ }
+</script>
 
 </div>
 </div>
