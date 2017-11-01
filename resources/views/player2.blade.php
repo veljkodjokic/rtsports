@@ -80,13 +80,16 @@
                         </div>
                     @endif
 
-                    <video id="video"></video>
+                    <div id="inflated-div"></div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-
+<script type="text/javascript">
+    var html = '<video id="video" width=960 height=540 controls>
+    <source src="http://91.121.72.155/hls/stream1.m3u8" type="application/x-mpegURL">
+</video>
 <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
 <script>
   if(Hls.isSupported()) {
@@ -98,7 +101,12 @@
       video.play();
   });
  }
+</script>';
+
+$('.inflated-div').append(html);
 </script>
+
+
 
 </div>
 </div>
