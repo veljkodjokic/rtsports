@@ -74,27 +74,24 @@
                 <div class="panel-heading">Dashboard</div>
 
                 <div class="panel-body">
-                    <video id="video" width=960 height=540 controls>
-                        <source src="http://91.121.72.155/hls/stream1.m3u8" type="application/x-mpegURL">
-                    </video>
+                    <video id="video" width=960 height=540 controls></video>
                 </div>
             </div>
         </div>
     </div>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+<script src="video.js"></script>
+<script src="videojs-contrib-hls.min.js"></script>
 
 <script type="text/javascript">
-    if(Hls.isSupported()) {
-        var video = document.getElementById('video');
-        var hls = new Hls();
-        hls.loadSource('http://91.121.72.155/hls/stream1.m3u8');
-        hls.attachMedia(video);
-        hls.on(Hls.Events.MANIFEST_PARSED,function() {
-            video.play();
-        });
-    }
+    var player = videojs('video');
+
+player.src({
+  src: 'http://91.121.72.155/hls/stream1.m3u8',
+  type: 'application/x-mpegURL',
+  withCredentials: true
+});
 </script>
 </div>
 </body>
