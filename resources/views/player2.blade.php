@@ -89,19 +89,18 @@
     </div>
 </div>
 
-<script src="//vjs.zencdn.net/5.19/video.min.js"></script>
-<script src="https://unpkg.com/videojs-contrib-hls/dist/videojs-contrib-hls.js"></script>
-
-<script type="text/javascript">
- 
-var player = videojs('video');
-player.ready(function() {
-  this.src({
-    src: 'http://91.121.72.155/hls/stream1.m3u8',
-    type: 'application/x-mpegURL',
+<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+<video id="video"></video>
+<script>
+  if(Hls.isSupported()) {
+    var video = document.getElementById('video');
+    var hls = new Hls();
+    hls.loadSource('https://video-dev.github.io/streams/x36xhzz/x36xhzz.m3u8');
+    hls.attachMedia(video);
+    hls.on(Hls.Events.MANIFEST_PARSED,function() {
+      video.play();
   });
-});
-
+ }
 </script>
 
 </div>
