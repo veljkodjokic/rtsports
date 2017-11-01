@@ -90,8 +90,8 @@
 </div>
 
 <link href="//vjs.zencdn.net/5.19/video-js.min.css" rel="stylesheet">
-<script src="/js/video.js"></script>
-<script src="/js/videojs.contrib-hls.js"></script>
+<script src="{{ asset('js/video.js') }}"></script>
+<script src="{{ asset('js/videojs.contrib-hls.js') }}"></script>
 <script>
             var player = videojs('video');
             player.play();
