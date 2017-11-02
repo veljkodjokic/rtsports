@@ -81,6 +81,7 @@
                     @endif
 
                     <video id="video" width=960 height=540 controls>
+                        <source src="https://www.rtsportsbackend.work/hls/stream.m3u8" type="application/x-mpegURL">
                     </video>
                 </div>
             </div>
@@ -94,7 +95,7 @@
   if(Hls.isSupported()) {
     var video = document.getElementById('video');
     var hls = new Hls();
-    hls.loadSource('http://91.121.72.155/hls/stream1.m3u8');
+    hls.loadSource('https://www.rtsportsbackend.work/hls/stream1.m3u8');
     hls.attachMedia(video);
     hls.on(Hls.Events.MANIFEST_PARSED,function() {
       video.play();
