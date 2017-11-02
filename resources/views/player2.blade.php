@@ -81,7 +81,7 @@
                     @endif
 
                     <video id="video" width=960 height=540 controls>
-                        <source src="https://www.rtsportsbackend.work/hls/stream.m3u8" type="application/x-mpegURL">
+                        <source src="https://www.rtsportsbackend.work/hls/stream1.m3u8" type="application/x-mpegURL">
                     </video>
                 </div>
             </div>
