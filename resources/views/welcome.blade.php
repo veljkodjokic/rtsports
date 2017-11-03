@@ -13,7 +13,7 @@
         <!-- Styles -->
         <style>
             html, body {
-                background-color: #fff;
+                background-color: #231F20;
                 color: #636b6f;
                 font-family: 'Raleway', sans-serif;
                 font-weight: 100;
@@ -46,7 +46,7 @@
             }
 
             .title {
-                font-size: 84px;
+                font-size: 54px;
             }
 
             .links > a {
@@ -79,7 +79,8 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Welcome to RTSports
+                    Welcome to<br />
+                    <img src="pics/bez pozadine.svg" style="width: 80%; height: 30%;" />
                 </div>
             </div>
         </div>
