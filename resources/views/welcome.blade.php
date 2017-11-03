@@ -87,7 +87,7 @@
             <div class="content">
                 <div class="title m-b-md">
                     Welcome to<br />
-                    <div style="width: 80%; height: 30%; background-image: url('assets/pics/bez pozadine.svg'); "></div>
+                    <img src="pics/bez_pozadine_real.png" style="width: 80%; height: 30%;" />
                 </div>
             </div>
         </div>
