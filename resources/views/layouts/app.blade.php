@@ -5,6 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <!-- Open Graph Values -->
+    <meta property=”og:title” content=”RTSports” />
+    <meta property=”og:url” content=”https://www.rtsports.us” />
+    <meta property=”og:type” content=”website” />
+    <meta property=”og:description” content=”The best Real-Time Sports platform out there!” />
+    <meta property=”og:image” content=”https://rtsports.us/pics/bez%20pozadine.svg” />
+
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
