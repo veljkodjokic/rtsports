@@ -10,7 +10,7 @@
     <meta property=og:url content=https://www.rtsports.us>
     <meta property=og:type content=website>
     <meta property=og:description content='The best Real-Time Sports platform out there! '>
-    <meta property=og:image content='https://rtsports.us/pics/bez%20pozadine.png'>
+    <meta property=og:image content='https://rtsports.us/pics/bez pozadine.png'>
 
         <title>RTSports</title>
 
