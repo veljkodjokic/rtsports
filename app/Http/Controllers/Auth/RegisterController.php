@@ -4,8 +4,12 @@ namespace App\Http\Controllers\Auth;
 
 use App\User;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use App\User;
+use Mail;
+use App\Mail\veirifyEmail;
 
 class RegisterController extends Controller
 {
@@ -62,10 +66,20 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
+        $user=User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
+            'verifytoken' => Str::random(40),
+            'status' => '0',
         ]);
+
+        $thisUser = User::findOrFail($user->id);
+        $this->sendEmail($thisUser);
+    }
+
+    public function sendEmail($thisUser)
+    {
+        Mail::to($thisUser['email'])->send(new veirifyEmail($thisUser));
     }
 }

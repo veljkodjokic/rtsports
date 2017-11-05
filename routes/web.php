@@ -26,3 +26,5 @@ Route::get('/game1' , function(){
 Route::get('/game2' , function(){
 	return view('player2');
 });
+
+Route::get('verifyEmailFirst', 'Auth\RegisterController@verifyEmailFirst')->name('verifyEmailFirst');
