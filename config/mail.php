@@ -86,7 +86,7 @@ return [
 
     'username' => env('info@rtsports.us'),
 
-    'password' => env('mazolipo12199'),
+    'password' => env('NqxU5ILjhD8W'),
 
     /*
     |--------------------------------------------------------------------------
