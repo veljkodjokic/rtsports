@@ -29,4 +29,4 @@ Route::get('/game2' , function(){
 
 Route::get('verifyEmailFirst', 'Auth\RegisterController@verifyEmailFirst')->name('verifyEmailFirst');
 
-Route::get('verify/{email}/{verifyToken}', 'Auth\RegisterController@vsendEmailDone')->name('sendEmailDone');
+Route::get('verify/{email}/{verifyToken}', 'Auth\RegisterController@sendEmailDone')->name('sendEmailDone');

@@ -88,8 +88,11 @@ class RegisterController extends Controller
         return view('email.verifyEmailFirst');
     }
 
-    public function sendEmailDone()
+    public function sendEmailDone($email, $verifyToken)
     {
-
+        $user = USER::where(['email'=>$email,'verifytoken'=>$verifyToken])->first();
+        if($user){
+        return    $user->update(['status'=>'1', 'verifytoken'=>'nill']);
+        }
     }
 }

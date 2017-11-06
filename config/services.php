@@ -15,8 +15,8 @@ return [
     */
 
     'mailgun' => [
-        'domain' => env('MAILGUN_DOMAIN'),
-        'secret' => env('MAILGUN_SECRET'),
+        'domain' => 'email.rtsports.us',
+        'secret' => 'key-2f4c3ab3e342e7350b788d891d34f672',
     ],
 
     'ses' => [
@@ -34,5 +34,7 @@ return [
         'key' => env('STRIPE_KEY'),
         'secret' => env('STRIPE_SECRET'),
     ],
+
+
 
 ];
