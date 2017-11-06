@@ -1,19 +1,30 @@
 <!DOCTYPE html>
 <html lang="{{ app()->getLocale() }}">
 <head>
+    @include('partials/favicon')
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta property=og:title content=RTSports>
+    <meta property=og:url content=https://www.rtsports.us>
+    <meta property=og:type content=website>
+    <meta property=og:description content='The best Real-Time Sports platform out there! '>
+    <meta property=og:image content='https://rtsports.us/pics/samo logo pez pozadine.png'>
+
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'Laravel') }}</title>
-    @include('partials/favicon')
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <script src="http://code.jquery.com/jquery-1.6.4.min.js" type="text/javascript"></script>
 </head>
-<body>
-    <div id="app">
-        <nav class="navbar navbar-default navbar-static-top">
+<body style="background-color: #231F20">
+    <div id="app" >
+        <nav class="navbar navbar-default navbar-static-top" style="background-color: #231F20;  border-color:#EC1A24;">
             <div class="container">
                 <div class="navbar-header">
 
@@ -70,18 +81,18 @@
         </nav>
 <div class="container">
     <div class="row">
-        <div class="col-md-8 col-md-offset-2">
+        <div class="col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Dashboard</div>
+                <div class="panel-heading">Channel 1</div>
 
-                <div class="panel-body">
+                <div class="panel-body" style="height:90%">
                     @if (session('status'))
                         <div class="alert alert-success">
                             {{ session('status') }}
                         </div>
                     @endif
 
-                    <video id="video" width=960 height=540 controls>
+                    <video id="video" width=960 height=540 style="margin:0 auto;" controls>
                         <source src="https://www.rtsportsbackend.work/hls/stream.m3u8" type="application/x-mpegURL">
                     </video>
                 </div>
