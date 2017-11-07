@@ -7,8 +7,6 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
-use Mail;
-use App\Mail\verifyEmail;
 
 class RegisterController extends Controller
 {
@@ -74,25 +72,7 @@ class RegisterController extends Controller
         ]);
 
         $thisUser = User::findOrFail($user->id);
-        $this->sendEmail($thisUser);
-        return $user;
-    }
-
-    public function sendEmail($thisUser)
-    {
-        Mail::to($thisUser['email'])->send(new verifyEmail($thisUser));
-    }
-
-    public function verifyEmailFirst()
-    {
-        return view('email.verifyEmailFirst');
-    }
-
-    public function sendEmailDone($email, $verifyToken)
-    {
-        $user = USER::where(['email'=>$email,'verifytoken'=>$verifyToken])->first();
-        if($user){
-        return    $user->update(['status'=>'1', 'verifytoken'=>'nill']);
-        }
+        app('App\Http\Controllers\StatusController')->sendEmail($thisUser);
+        return false;
     }
 }

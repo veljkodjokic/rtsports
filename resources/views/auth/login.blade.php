@@ -36,6 +36,17 @@
                                         <strong>{{ $errors->first('password') }}</strong>
                                     </span>
                                 @endif
+
+                                @if(Session::has('msg'))
+                                    <script type="text/javascript">
+                                        swal({
+                                          title: "Good job!",
+                                          text: "Congratulations {!!Session::get('msg')!!}.\nYou successfully verified your email address.",
+                                          icon: "success",
+                                          button: "Ok",
+                                        });
+                                    </script>
+                                @endif
                             </div>
                         </div>
 

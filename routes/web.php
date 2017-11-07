@@ -27,6 +27,6 @@ Route::get('/game2' , function(){
 	return view('player2');
 });
 
-Route::get('verifyEmailFirst', 'Auth\RegisterController@verifyEmailFirst')->name('verifyEmailFirst');
+Route::get('verifyEmailFirst', 'StatusController@verifyEmailFirst')->name('verifyEmailFirst');
 
-Route::get('verify/{email}/{verifyToken}', 'Auth\RegisterController@sendEmailDone')->name('sendEmailDone');
+Route::get('verify/{id}/{verifyToken}', 'StatusController@sendEmailDone')->name('sendEmailDone');

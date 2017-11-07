@@ -91,6 +91,6 @@
                     <img src="pics/bez_pozadine_real.png" style="width: 80%; height: 30%;" />
                 </div>
             </div>
-        </div>
+        </div> 
     </body>
 </html>

@@ -20,7 +20,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <script src="http://code.jquery.com/jquery-1.6.4.min.js" type="text/javascript"></script>
+    <script src="//code.jquery.com/jquery-1.6.4.min.js" type="text/javascript"></script>
 </head>
 <body style="background-color: #231F20">
     <div id="app" >
