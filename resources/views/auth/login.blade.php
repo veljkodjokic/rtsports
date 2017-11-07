@@ -43,7 +43,7 @@
                                           title: "Good job!",
                                           text: "Congratulations {!!Session::get('msg')!!}.\nYou successfully verified your email address.",
                                           icon: "success",
-                                          button: "Ok",
+                                          button: "Ok!",
                                         });
                                     </script>
                                 @endif
