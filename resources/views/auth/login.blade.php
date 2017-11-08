@@ -47,6 +47,12 @@
                                         });
                                     </script>
                                 @endif
+
+                                @if(Session::has('err_ver'))
+                                <script type="text/javascript">
+                                        swal ( "Permission denied!" ,  "Please verify your email address" ,  "error" )
+                                </script>
+                                @endif
                             </div>
                         </div>
 
