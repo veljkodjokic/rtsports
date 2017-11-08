@@ -21,6 +21,7 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <script src="//code.jquery.com/jquery-1.6.4.min.js" type="text/javascript"></script>
+    <script src="{{ asset('js/app.js') }}"></script>
 </head>
 <body style="background-color: #231F20">
     <div id="app" >
@@ -55,6 +56,12 @@
                             <li><a href="{{ route('login') }}">Login</a></li>
                             <li><a href="{{ route('register') }}">Register</a></li>
                         @else
+                            <li><a href="channels">Channels</a></li>
+
+                            <li><a href="schedule">Schedule</a></li>
+
+                            <li><a href="contact">Contact us</a></li>
+
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
                                     {{ Auth::user()->name }} <span class="caret"></span>
@@ -62,6 +69,14 @@
 
                                 <ul class="dropdown-menu">
                                     <li>
+                                        <a href="/account">
+                                            My account
+                                        </a>
+
+                                        <a href="/subscriptions">
+                                            My subscriptions
+                                        </a>
+
                                         <a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -92,7 +107,7 @@
                         </div>
                     @endif
 
-                    <video id="video" width=960 height=540 style="margin:0 auto;" controls>
+                    <video id="video" width="100%" height="50%" style="margin:0 auto;" controls>
                         <source src="https://www.rtsportsbackend.work/hls/stream.m3u8" type="application/x-mpegURL">
                     </video>
                 </div>
