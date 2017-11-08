@@ -25,4 +25,14 @@ class HomeController extends Controller
     {
         return view('home');
     }
+
+    public function getSchedule()
+    {
+        return view('schedule');
+    }
+
+    public function getSubs()
+    {
+        return view('subs');
+    }
 }

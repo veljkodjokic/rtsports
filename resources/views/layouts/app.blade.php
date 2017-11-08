@@ -39,7 +39,7 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'Laravel') }}
+                        <img src="pics/bez_pozadine_real.png" style="width: 100%; height: 100%;" />
                     </a>
                 </div>
 
@@ -56,6 +56,12 @@
                             <li><a href="{{ route('login') }}">Login</a></li>
                             <li><a href="{{ route('register') }}">Register</a></li>
                         @else
+                            <li><a href="channels">Channels</a></li>
+
+                            <li><a href="schedule">Schedule</a></li>
+
+                            <li><a href="contact">Contact us</a></li>
+
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
                                     {{ Auth::user()->name }} <span class="caret"></span>
@@ -63,6 +69,14 @@
 
                                 <ul class="dropdown-menu">
                                     <li>
+                                        <a href="/account">
+                                            My account
+                                        </a>
+
+                                        <a href="/subscriptions">
+                                            My subscriptions
+                                        </a>
+
                                         <a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">

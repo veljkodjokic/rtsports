@@ -88,7 +88,7 @@
             <div class="content">
                 <div class="title m-b-md">
                     Welcome to<br />
-                    <img src="pics/bez_pozadine_real.png" style="width: 80%; height: 30%;" />
+                    <a href="/login"><img src="pics/bez_pozadine_real.png" style="width: 80%; height: 30%;" /></a>
                 </div>
             </div>
         </div> 
