@@ -39,7 +39,7 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'Laravel') }}
+                       <img src="pics/bez_pozadine_real.png" style="width: 100%; height: 100%;" />
                     </a>
                 </div>
 
