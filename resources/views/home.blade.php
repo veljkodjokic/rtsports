@@ -25,6 +25,18 @@
                             <a  href="{{url('/game2')}}"><img src="pics/game2.jpg" style="width:100%; height:100%"></a>
                         </tag>
                     </div>
+
+                    <div id="kvadrat" style="position:relative; width:70%; height:30%; margin:0 auto; ">
+                        <tag>
+                            <a  href="#"><img src="pics/coming.png" style="width:100%; height:100%"></a>
+                        </tag>
+                    </div>
+
+                    <div id="kvadrat" style="position:relative; width:70%; height:30%; margin:0 auto; ">
+                        <tag>
+                            <a  href="#"><img src="pics/coming.png" style="width:100%; height:100%"></a>
+                        </tag>
+                    </div>
                 </div>
             </div>
         </div>

@@ -27,7 +27,7 @@
     <div id="app" >
         <nav class="navbar navbar-default navbar-static-top" style="background-color: #231F20;  border-color:#EC1A24;">
             <div class="container">
-                <div class="navbar-header">
+                <div class="navbar-header" style="width: 250px;">
 
                     <!-- Collapsed Hamburger -->
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse" aria-expanded="false">
@@ -38,7 +38,7 @@
                     </button>
 
                     <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('/') }}">
+                    <a class="navbar-brand" href="{{ url('/') }}" style="width: 60%">
                         <img src="pics/bez_pozadine_real.png" style="width: 100%; height: 100%;" />
                     </a>
                 </div>
