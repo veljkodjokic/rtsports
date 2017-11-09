@@ -39,4 +39,4 @@ Route::get('verifyEmailFirst', 'StatusController@verifyEmailFirst')->name('verif
 Route::get('verify/{id}/{verifyToken}', 'StatusController@sendEmailDone')->name('sendEmailDone');
 
 //Edit account pages
-Route::get('/accoount', 'AccountController@getAccount')->name('account');
+Route::get('/account', 'AccountController@getAccount')->name('account');
