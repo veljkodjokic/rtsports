@@ -34,6 +34,10 @@ Route::get('/game2' , function(){
 	return view('player2');
 });
 
+Route::get('/game3' , function(){
+	return view('player3');
+});
+
 Route::get('verifyEmailFirst', 'StatusController@verifyEmailFirst')->name('verifyEmailFirst');
 
 Route::get('verify/{id}/{verifyToken}', 'StatusController@sendEmailDone')->name('sendEmailDone');

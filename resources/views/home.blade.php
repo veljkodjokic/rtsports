@@ -28,13 +28,13 @@
 
                     <div id="kvadrat" style="position:relative; width:70%; height:30%; margin:0 auto; ">
                         <tag>
-                            <a  href="#"><img src="pics/coming.png" style="width:100%; height:100%"></a>
+                            <a  href="{{url('/game3')}}"><img src="pics/game3.png" style="width:100%; height:100%"></a>
                         </tag>
                     </div>
 
                     <div id="kvadrat" style="position:relative; width:70%; height:30%; margin:0 auto; ">
                         <tag>
-                            <a  href="#"><img src="pics/coming.png" style="width:100%; height:100%"></a>
+                            <a  href="#game4"><img src="pics/coming.png" style="width:100%; height:100%"></a>
                         </tag>
                     </div>
                 </div>

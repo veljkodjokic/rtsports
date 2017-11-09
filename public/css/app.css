@@ -11,7 +11,7 @@
     position: relative;
     width: 211px;
     height: 106px;
-    text-align: center;
+    text-align: left;
     padding:10px;
     border-radius: 5px;
     background: transparent;
@@ -38,3 +38,7 @@ a, u {
     text-decoration: none;
     color:black;
 }
+
+@media only screen and (max-width: 770px) {
+}
+
