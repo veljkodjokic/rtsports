@@ -16,4 +16,9 @@ class ContactController extends Controller
     {
         return view('pages.contact');
     }
+
+    public function getAbout()
+    {
+        return view('pages.about');
+    }
 }
