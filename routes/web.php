@@ -38,9 +38,9 @@ Route::get('/game3' , function(){
 	return view('player3');
 });
 
-Route::get('verifyEmailFirst', 'StatusController@verifyEmailFirst')->name('verifyEmailFirst');
+Route::get('verifyPaymentFirst', 'StatusController@verifyEmailFirst')->name('verifyPaymentFirst');
 
-Route::get('verify/{id}/{verifyToken}', 'StatusController@sendEmailDone')->name('sendEmailDone');
+//Route::get('verify/{id}/{verifyToken}', 'StatusController@sendEmailDone')->name('sendEmailDone');
 
 //Edit account pages
 Route::get('/account', 'AccountController@getAccount')->name('account');

@@ -28,11 +28,11 @@ class HomeController extends Controller
 
     public function getSchedule()
     {
-        return view('schedule');
+        return view('pages.schedule');
     }
 
     public function getSubs()
     {
-        return view('subs');
+        return view('pages.subs');
     }
 }

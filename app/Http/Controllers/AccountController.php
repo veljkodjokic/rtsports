@@ -14,6 +14,6 @@ class AccountController extends Controller
     
     public function getAccount()
     {
-    	return view('account');
+    	return view('pages.account');
     }
 }
