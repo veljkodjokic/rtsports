@@ -27,4 +27,15 @@ class StatusController extends Controller
         \Session::flash('msg', $user->name);
         return redirect('/login');
         }
-    }}
+    }
+
+    public function checkExp()
+    {
+        $response='/';
+        if(\Auth::guest())
+            return \Response::json($response);
+            
+    }
+}
+
+    

@@ -20,8 +20,10 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <script src="{{ asset('js/app.js') }}"></script>
     <script src="//code.jquery.com/jquery-1.6.4.min.js" type="text/javascript"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
 </head>
 <body style="background-color: #231F20">
     <div id="app" >
@@ -101,6 +103,25 @@
     </div>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}"></script>
+    
+    <script type="text/javascript">
+    $.ajaxSetup({
+  headers: {
+    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+  }
+});
+    
+    $(document).ready(function(){
+        setInterval(function(){
+            $.ajax({ 
+                type: 'POST', 
+                url: 'check_exp', 
+                error: function(data){
+                    window.location = '/';
+                }
+});
+    },1*60*1000);
+});
+    </script>
 </body>
 </html>

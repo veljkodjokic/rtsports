@@ -45,3 +45,6 @@ Route::get('verifyPaymentFirst', 'StatusController@verifyEmailFirst')->name('ver
 
 //Edit account pages
 Route::get('/account', 'AccountController@getAccount')->name('account');
+
+//check if auth exp
+Route::post('/check_exp', 'StatusController@checkExp')->name('check_exp');
