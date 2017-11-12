@@ -27,18 +27,20 @@ Route::get('/contact', 'ContactController@getContact')->name('contact');
 Route::post('/contact', 'ContactController@sendContact')->name('contact');
 Route::get('/about', 'ContactController@getAbout')->name('about');
 
-
-Route::get('/game1' , function(){
-	return view('player1');
+Route::middleware('auth')->group(function () {
+	Route::get('/game1' , function(){
+		return view('player1');
+	});
+	
+	Route::get('/game2' , function(){
+		return view('player2');
+	});
+	
+	Route::get('/game3' , function(){
+		return view('player3');
+	});
 });
 
-Route::get('/game2' , function(){
-	return view('player2');
-});
-
-Route::get('/game3' , function(){
-	return view('player3');
-});
 
 Route::get('verifyPaymentFirst', 'StatusController@verifyEmailFirst')->name('verifyPaymentFirst');
 
@@ -49,3 +51,8 @@ Route::get('/account', 'AccountController@getAccount')->name('account');
 
 //check if auth exp
 Route::post('/check_exp', 'StatusController@checkExp')->name('check_exp');
+
+//ADMIN PANEL!
+Route::middleware(['auth', 'admin'])->group(function () {
+    Route::get('/admin/auth_users', 'AdminController@getAuthUser')->name('admin/auth_users');
+});

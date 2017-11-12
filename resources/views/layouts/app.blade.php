@@ -58,6 +58,10 @@
                             <li><a href="{{ route('login') }}">Login</a></li>
                             <li><a href="{{ route('register') }}">Register</a></li>
                         @else
+                            @if(\Auth::user()->admin)
+                                <li><a href="admin/auth_users" style="color: lime;">Auth Users</a></li>
+                            @endif
+
                             <li><a href="channels">Channels</a></li>
 
                             <li><a href="schedule">Schedule</a></li>

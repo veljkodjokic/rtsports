@@ -16,7 +16,7 @@ class Verified
      */
     public function handle($request, Closure $next,$user)
     {
-        if($user){
+       if($user){
        if (!$user->status) {
            return redirect('/login')->withErrors(['Account is not verified.']);
        }
