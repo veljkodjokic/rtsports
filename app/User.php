@@ -26,4 +26,9 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    //public function isOnline()
+    //{
+    //    return Cache::has('user-is-online-' . $this->id);
+    //}
 }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\User;
 
 class AdminController extends Controller
 {
@@ -14,7 +15,8 @@ class AdminController extends Controller
 
     public function getAuthUser()
     {
-    	return view('admin.auth_user');
+    	$users=User::all();
+    	return view('admin.auth_user')->with('users',$users);
     }
 
 }
