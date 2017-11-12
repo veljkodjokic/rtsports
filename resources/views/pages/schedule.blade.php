@@ -18,19 +18,6 @@
                     @endif
 
                     <p>
-                        
-                        Saturday: 
-                        <ul>
-                            <li>01.00 Clippers @ Pelicans on Channel 1</li>
-                        
-                            <li>02.00 Kings @ Knicks on Channel 2</li>
-            
-                            <li>02.30 Lakers @ Bucks on Channel 3</li>
-            
-                            <li>03.00 Magic @ Nuggets on Channel 1 (After Clippers @ Pelicans)</li>
-                        </ul>
-                        
-                        
                         Sunday: 
                         <ul>
                             <li>21.30 Raptors @ Celtic on Channel 1</li>
