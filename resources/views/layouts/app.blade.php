@@ -25,7 +25,7 @@
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 </head>
-<body style="background-color: #231F20">
+<body style="background-color: #231F20;">
     <div id="app" >
         <nav class="navbar navbar-default navbar-static-top" style="background-color: #231F20;  border-color:#EC1A24;">
             <div class="container">

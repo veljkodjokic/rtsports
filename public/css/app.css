@@ -40,16 +40,39 @@ a, u {
     color:black;
 }
 
-@media only screen and (max-width: 770px) {
-    #kvadrat{
-        margin: 0 auto;
-        width: 80% 
-    }
+.side_players_left {
+	position: absolute; 
+	float: left;  
+	width: 23%; 
+	margin-top: 50px;
+	background-color: #FFFFFF; 
+	left: 1%;
+	padding-bottom: 20px;
+	border-radius: 7px;
 }
-@media only screen and (min-width: 770px) {
-    #kvadrat{
-        display: inline-block;
-        width:49%; 
-    }
+
+.side_players_bottom {
+	position: absolute;  
+	width: 85%; 
+	background-color: #FFFFFF; 
+	margin-left: 8%;
+	padding:20px;
+	border-radius: 7px;
+}
+
+@media only screen and (max-width: 1500px) {
+    .side_players_left {
+		display: none;
+	}
+
+	.col-md-offset-2{
+		margin-left: 0%;
+	}
+}
+
+@media only screen and (min-width: 1500px) {
+    .side_players_bottom {
+		display: none;
+	}
 }
 

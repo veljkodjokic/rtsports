@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+<div class="side_players_left">@include('partials.channel_meni_content3')</div>
 <div class="container">
     <div class="row">
         <div class="col-md-offset-2">
@@ -22,7 +23,7 @@
         </div>
     </div>
 </div>
-
+<div class="side_players_bottom">@include('partials.channel_meni_content3')</div>
 <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
 
 <script>

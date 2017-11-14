@@ -1,6 +1,21 @@
 @extends('layouts.app')
 
 @section('content')
+<style type="text/css">
+    @media only screen and (max-width: 770px) {
+        #kvadrat{
+            margin: 0 auto;
+            width: 80%; 
+        }
+    }
+
+    @media only screen and (min-width: 770px) {
+        #kvadrat{
+            display: inline-block;
+            width:49%; 
+        }
+    }
+</style>
 <div class="container">
     <div class="row">
             <div class="panel panel-default">
