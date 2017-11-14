@@ -18,7 +18,7 @@ td, th {
     <div class="row">
         <div class="col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">All Authenticated Users</div>
+                <div class="panel-heading">All User Login logs</div>
 
                 <div class="panel-body" style="height:90% color: #636b6f;
                 font-family: 'Raleway', sans-serif;
