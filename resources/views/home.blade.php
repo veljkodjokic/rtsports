@@ -47,6 +47,4 @@
 </div>
 @include('partials/auth_check')
 
-@if(Session::has('msg_sale1211')) <script type="text/javascript">swal('SALEEEEEEEEEEEE','You can run but you cant hide!', 'error');</script> @endif
-
 @endsection
