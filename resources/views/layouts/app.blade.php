@@ -60,6 +60,7 @@
                         @else
                             @if(\Auth::user()->admin)
                                 <li><a href="/admin/auth_users" style="color: lime;">Auth Users</a></li>
+                                <li><a href="/admin/log_users" style="color: lime;">User logs</a></li>
                             @endif
 
                             <li><a href="/channels">Channels</a></li>
