@@ -20,4 +20,5 @@
         </div>
     </div>
 </div>
+@include('partials/auth_check')
 @endsection

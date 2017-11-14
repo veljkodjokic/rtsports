@@ -40,7 +40,7 @@
                     </button>
 
                     <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('/') }}" style="width: 60%">
+                    <a class="navbar-brand" href="{{ url('/home') }}" style="width: 60%">
                         <img src="{{ asset('pics/bez_pozadine_real.png') }}" style="width: 100%; height: 100%;" />
                     </a>
                 </div>
@@ -107,25 +107,5 @@
     </div>
 
     <!-- Scripts -->
-    
-    <script type="text/javascript">
-    $.ajaxSetup({
-  headers: {
-    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-  }
-});
-    
-    $(document).ready(function(){
-        setInterval(function(){
-            $.ajax({ 
-                type: 'POST', 
-                url: 'check_exp', 
-                error: function(data){
-                    window.location = '/';
-                }
-});
-    },1*60*1000);
-});
-    </script>
 </body>
 </html>

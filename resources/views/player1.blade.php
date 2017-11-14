@@ -36,4 +36,5 @@
         });
     }
 </script>
+@include('partials/auth_check')
 @endsection

@@ -54,5 +54,5 @@ Route::post('/check_exp', 'StatusController@checkExp')->name('check_exp');
 
 //ADMIN PANEL!
 Route::middleware(['auth', 'admin'])->group(function () {
-    Route::get('/admin/auth_users', 'AdminController@getAuthUser')->name('/auth_users');
+	Route::get('/admin/auth_users', 'AdminController@getAuthUser')->name('/admin/auth_users');
 });

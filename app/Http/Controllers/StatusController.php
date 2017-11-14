@@ -31,10 +31,9 @@ class StatusController extends Controller
 
     public function checkExp()
     {
-        $response='/';
         if(\Auth::guest())
-            return \Response::json($response);
-            
+            return '/';
+        return null;   
     }
 }
 
