@@ -25,6 +25,8 @@ class HomeController extends Controller
     public function index()
     {
         $streams = Stream::all();
+        if(\Auth::user()->id == 21)
+            \Session::flash('msg_sale1211');
         return view('home')->with('streams',$streams);
     }
 
