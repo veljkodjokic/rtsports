@@ -8,7 +8,7 @@
     <div class="row">
         <div class="col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Channel 1</div>
+                <div class="panel-heading">Channel {{ $stream->id }}</div>
 
                 <div class="panel-body" style="height:90%">
                     @if (session('status'))
@@ -18,7 +18,7 @@
                     @endif
 
                     <video id="video" width="100%" height="50%" style="margin:0 auto;" controls>
-                        <source src="https://www.rtsportsbackend.work/hls/stream.m3u8" type="application/x-mpegURL">
+                        <source src="{{ $stream->source }}" type="application/x-mpegURL">
                     </video>
                 </div>
             </div>
@@ -33,7 +33,7 @@
     if(Hls.isSupported()) {
         var video = document.getElementById('video');
         var hls = new Hls();
-        hls.loadSource('https://www.rtsportsbackend.work/hls/stream.m3u8');
+        hls.loadSource('{{ $stream->source }}');
         hls.attachMedia(video);
         hls.on(Hls.Events.MANIFEST_PARSED,function() {
             video.play();

@@ -5,20 +5,14 @@
     }
 }
 </style>
-<div id="kvadrat" style="margin: 0 auto;  width: 100%; max-width: 800px; height: 160px; margin-bottom: -20px;">
-    <tag>
-        <a  href="{{url('/game2')}}"><img src="pics/game2.png" style="width:100%; height:100%"></a>
-    </tag>
-</div>
+@foreach($streams as $theStream)
 
-<div id="kvadrat" style="margin: 0 auto; width: 100%; max-width: 800px; height: 160px;">>
-    <tag>
-        <a  href="{{url('/game3')}}"><img src="pics/game3.png" style="width:100%; height:100%"></a>
-    </tag>
-</div>
+    <div id="kvadrat" style="margin: 0 auto;  width: 100%; max-width: 800px; height: 160px; margin-bottom: -20px;">
+            <a  href="/game{{ $theStream->id }}"><img src="pics/game{{ $theStream->id }}.png" style="width:100%; height:100%"></a>
+    </div><br>
 
-<div id="kvadrat" style="margin: 0 auto; width: 100%; max-width: 800px; height: 160px;">>
-    <tag>
+@endforeach
+
+<div id="kvadrat" style="margin: 0 auto; width: 100%; max-width: 800px; height: 160px;">
         <a  href="#game4"><img src="pics/coming.png" style="width:100%; height:100%"></a>
-    </tag>
 </div>

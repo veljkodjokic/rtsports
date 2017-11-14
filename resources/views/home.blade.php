@@ -28,23 +28,13 @@
                         </div>
                     @endif
 
-                    <div id="kvadrat">
-                        <tag>
-                            <a  href="{{url('/game1')}}"><img src="pics/game1.png" style="width:100%; height:100%;"></a>
-                        </tag>
-                    </div>
-
-                    <div id="kvadrat">
-                        <tag>
-                            <a  href="{{url('/game2')}}"><img src="pics/game2.png" style="width:100%; height:100%"></a>
-                        </tag>
-                    </div>
-
-                    <div id="kvadrat">
-                        <tag>
-                            <a  href="{{url('/game3')}}"><img src="pics/game3.png" style="width:100%; height:100%"></a>
-                        </tag>
-                    </div>
+                    @foreach($streams as $stream)
+                        <div id="kvadrat">
+                            <tag>
+                                <a  href="/game{{$stream->id}}"><img src="pics/game{{ $stream->id }}.png" style="width:100%; height:100%;"></a>
+                            </tag>
+                        </div>
+                    @endforeach
 
                     <div id="kvadrat">
                         <tag>

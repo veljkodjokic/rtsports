@@ -23,24 +23,12 @@ Route::get('/home', function(){
 Route::get('/channels', 'HomeController@index')->name('channels');
 Route::get('/schedule', 'HomeController@getSchedule')->name('schedule');
 Route::get('/subscriptions', 'HomeController@getSubs')->name('subscriptions');
+
 Route::get('/contact', 'ContactController@getContact')->name('contact');
 Route::post('/contact', 'ContactController@sendContact')->name('contact');
 Route::get('/about', 'ContactController@getAbout')->name('about');
 
-Route::middleware('auth')->group(function () {
-	Route::get('/game1' , function(){
-		return view('player1');
-	});
-	
-	Route::get('/game2' , function(){
-		return view('player2');
-	});
-	
-	Route::get('/game3' , function(){
-		return view('player3');
-	});
-});
-
+Route::get('/game{id}', 'StreamController@getStream');
 
 Route::get('verifyPaymentFirst', 'StatusController@verifyEmailFirst')->name('verifyPaymentFirst');
 

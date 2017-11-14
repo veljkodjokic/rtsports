@@ -4,9 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Stream extends Model
+class Event extends Model
 {
     protected $fillable = [
-        'id', 'source', 'running'
+        'team1', 'team2', 'stream', 'day', 'time'
     ];
 }
