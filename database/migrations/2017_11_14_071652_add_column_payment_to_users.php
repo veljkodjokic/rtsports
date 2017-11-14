@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateStreamsTable extends Migration
+class AddColumnPaymentToUsers extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,8 @@ class CreateStreamsTable extends Migration
      */
     public function up()
     {
-        Schema::create('streams', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('source')->unique();
-            $table->boolean('running');
-            $table->timestamps();
+        Schema::table('users', function (Blueprint $table) {
+            $table->integer('payment')->default(0);
         });
     }
 
@@ -28,6 +25,8 @@ class CreateStreamsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('streams');
-    }
+        Schema::table('users', function (Blueprint $table) {
+            //
+        });
+    } 
 }
