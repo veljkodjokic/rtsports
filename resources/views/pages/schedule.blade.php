@@ -24,7 +24,7 @@
                         </div>
                     @endif
 
-                    <table>
+                    <table style="border-collapse: collapse; width: 100%;">
                       @if(\Auth::user()->admin)
                       {!! Form::open(['url'=>'/admin/add_event', 'method'=>'POST']) !!}
                       <tr>

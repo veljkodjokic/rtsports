@@ -12,7 +12,7 @@
                 font-family: 'Raleway', sans-serif;
                 font-weight: 70; font-size: 18pt; text-align: left; overflow-x: scroll;">
 
-                    <table>
+                    <table style="border-collapse: collapse; width: 100%;">
                       <tr>
                         <th>Username</th>
                         <th>Email</th>
