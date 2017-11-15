@@ -9,4 +9,9 @@ class Stream extends Model
     protected $fillable = [
         'id', 'source', 'running'
     ];
+
+    public function events()
+	{
+		return $this->hasMany('\App\Event');
+	}
 }

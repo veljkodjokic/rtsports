@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use \App\Stream;
+use Carbon\Carbon;
+use \App\Event;
 
 class HomeController extends Controller
 {
@@ -30,7 +32,8 @@ class HomeController extends Controller
 
     public function getSchedule()
     {
-        return view('pages.schedule');
+        $events= Event::Relevant()->orderBy('day')->orderBy('time')->get();
+        return view('pages.schedule')->with('events',$events);
     }
 
     public function getSubs()

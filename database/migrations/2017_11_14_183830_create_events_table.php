@@ -17,7 +17,7 @@ class CreateEventsTable extends Migration
             $table->increments('id');
             $table->string('team1');
             $table->string('team2');
-            $table->integer('stream');
+            $table->integer('stream_id')->references('id')->on('streams')->onDelete('cascade');
             $table->date('day');
             $table->time('time');
             $table->timestamps();

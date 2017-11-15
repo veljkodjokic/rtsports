@@ -44,4 +44,5 @@ Route::post('/check_exp', 'StatusController@checkExp')->name('check_exp');
 Route::middleware(['auth', 'admin'])->group(function () {
 	Route::get('/admin/auth_users', 'AdminController@getAuthUser')->name('/admin/auth_users');
 	Route::get('/admin/log_users', 'AdminController@getUserLog')->name('/admin/log_users');
+	Route::post('/admin/add_event', 'AdminController@postAddEvent')->name('/admin/add_event');
 });
