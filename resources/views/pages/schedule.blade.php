@@ -66,7 +66,7 @@
                           <td>@</td>
                           <td>{{ $event->team2 }}</td>
                           <td>ON</td>
-                          <td>Channel #{{ $stream->id }}</td>
+                          <td><a href="/game{{ $event->stream_id }}">Channel #{{ $stream->id }}</a></td>
                       @if(\Auth::user()->admin)
 
                           {!! Form::open(['url'=>'/admin/del_event', 'method'=>'POST']) !!}
