@@ -39,4 +39,12 @@ class AdminController extends Controller
         return \Redirect::back();
     }
 
+    public function postDelEvent(Request $request)
+    {
+        $id=$request->id;
+        $event = Event::find($id);
+        $event->delete();
+        return \Redirect::back();
+    }
+
 }

@@ -24,14 +24,14 @@
                         </div>
                     @endif
 
-                    <table style="border-collapse: collapse; width: 100%;">
+                    <table style="border-collapse: collapse; width: 100%; ">
                       @if(\Auth::user()->admin)
                       {!! Form::open(['url'=>'/admin/add_event', 'method'=>'POST']) !!}
                       <tr>
                         <td>{!! Form::date('day','',['id'=>'day', 'style'=>'max-width:150px;', 'placeholder'=>'Date']) !!}</td>
                         <td>{!! Form::text('time','',['id'=>'hour', 'style'=>'max-width:150px;', 'placeholder'=>'Time']) !!}</td>
                         <td>{!! Form::text('team1','',['id'=>'team1', 'style'=>'max-width:150px;', 'placeholder'=>'HomeTeam']) !!}</td>
-                        <td>VS.</td>
+                        <td>@</td>
                         <td>{!! Form::text('team2','',['id'=>'team2', 'style'=>'max-width:150px;', 'placeholder'=>'VisitingTeam']) !!}</td>
                         <td>ON</td>
                         <td>{!! Form::select('stream',['1'=>'1','2'=>'2','3'=>'3'],['style'=>'max-width:150px;', 'placeholder'=>'']) !!}</td>
@@ -63,10 +63,17 @@
                           <td>{{ $weekday }} {{ $date }}</td>
                           <td>{{ $hour }}</td>
                           <td>{{ $event->team1 }}</td>
-                          <td>VS.</td>
+                          <td>@</td>
                           <td>{{ $event->team2 }}</td>
                           <td>ON</td>
                           <td>Channel #{{ $stream->id }}</td>
+                      @if(\Auth::user()->admin)
+
+                          {!! Form::open(['url'=>'/admin/del_event', 'method'=>'POST']) !!}
+                          {!! Form::hidden('id', $event->id ) !!}
+                          <td>{!! Form::submit('DEL',['style'=>'color:red;']) !!}</td>
+                          {!! Form::close() !!}
+                      @endif
                         </tr>
                       @endforeach
                     </table>
