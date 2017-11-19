@@ -31,7 +31,7 @@
                     @foreach($streams as $stream)
                         <div id="kvadrat">
                             <tag>
-                                <a  href="/game{{$stream->id}}"><img src="pics/game{{ $stream->id }}.png" style="width:100%; height:100%;"></a>
+                                <a  href="/game{{$stream->id}}"><img src="pics/game{{ $stream->id }}.png" style="width:100%; height:100%;">@if($stream->Live())<div id="live_stream"><b>&#9673;LIVE</b></div>@endif</a>
                             </tag>
                         </div>
                     @endforeach
