@@ -3,8 +3,9 @@
     #kvadrat{
         min-height: 200px;
     }
+}
 
-    #live_stream {
+#live_stream {
     position: absolute;
     right: 15px;
     font-weight: 100;
@@ -12,7 +13,6 @@
     color:#21ff00;
     top:5px;
 	}
-}
 </style>
 @foreach($streams as $theStream)
 
