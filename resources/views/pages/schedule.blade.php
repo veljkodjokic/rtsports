@@ -28,7 +28,7 @@
                       @if(\Auth::user()->admin)
                       {!! Form::open(['url'=>'/admin/add_event', 'method'=>'POST']) !!}
                       <tr>
-                        <td>{!! Form::date('day','',['id'=>'day', 'style'=>'max-width:150px;', 'placeholder'=>'Date']) !!}</td>
+                        <td>{!! Form::text('day','',['id'=>'day', 'style'=>'max-width:150px;', 'placeholder'=>'Date']) !!}</td>
                         <td>{!! Form::text('time','',['id'=>'hour', 'style'=>'max-width:150px;', 'placeholder'=>'Time']) !!}</td>
                         <td>{!! Form::text('team1','',['id'=>'team1', 'style'=>'max-width:150px;', 'placeholder'=>'HomeTeam']) !!}</td>
                         <td>@</td>
