@@ -15,6 +15,15 @@
             width:49%; 
         }
     }
+
+    #live_stream {
+    position: absolute;
+    right: 15px;
+    font-weight: 100;
+    font-size: 35px;
+    color:#21ff00;
+    top:5px;
+}
 </style>
 <div class="container">
     <div class="row">
