@@ -8,15 +8,35 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/js/bootstrap-datepicker.js"></script>
+  <style type="text/css">
+  .panel-body {
+    height:90%; 
+    color: #636b6f;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 70; 
+    font-size: 18pt; 
+    text-align: left; 
+    overflow-x: scroll;
+  }
+
+    @media only screen and (max-width: 1000px) {
+    .panel-body {
+    font-size: 11pt;
+    font-weight: 35;
+  }
+
+  .col-md-offset-2{
+    margin-left: 0%;
+  }
+}
+  </style>
 
 <div class="container">
     <div class="row">
             <div class="panel panel-default">
                 <div class="panel-heading">Schedule</div>
 
-                <div class="panel-body" style="height:90% color: #636b6f;
-                font-family: 'Raleway', sans-serif;
-                font-weight: 70; font-size: 18pt; text-align: left; overflow-x: scroll;">
+                <div class="panel-body">
 
                     @if (session('status'))
                         <div class="alert alert-success">
@@ -65,8 +85,8 @@
                           <td>{{ $event->team1 }}</td>
                           <td>@</td>
                           <td>{{ $event->team2 }}</td>
-                          <td>ON</td>
-                          <td><a href="/game{{ $event->stream_id }}">Channel #{{ $stream->id }}</a></td>
+                          <td style="text-align: left;">ON</td>
+                          <td><a href="/game{{ $event->stream_id }}">Channel#{{ $stream->id }}</a></td>
                       @if(\Auth::user()->admin)
 
                           {!! Form::open(['url'=>'/admin/del_event', 'method'=>'POST']) !!}

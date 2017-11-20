@@ -2,15 +2,32 @@
 
 @section('content')
 
+<style type="text/css">
+  .panel-body {
+    height:90%; 
+    color: #636b6f;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 70; 
+    font-size: 18pt; 
+    text-align: left; 
+    overflow-x: scroll;
+  }
+
+    @media only screen and (max-width: 1000px) {
+    .panel-body {
+    font-size: 11pt;
+    font-weight: 35;
+  }
+}
+  </style>
+
 <div class="container">
     <div class="row">
       
             <div class="panel panel-default">
                 <div class="panel-heading">All Authenticated Users</div>
 
-                <div class="panel-body" style="height:90% color: #636b6f;
-                font-family: 'Raleway', sans-serif;
-                font-weight: 70; font-size: 18pt; text-align: left;  overflow-x: scroll;">
+                <div class="panel-body">
 
                     <table style="border-collapse: collapse; width: 100%;">
                       <tr>
