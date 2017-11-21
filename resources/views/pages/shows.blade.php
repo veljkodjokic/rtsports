@@ -15,7 +15,7 @@
 
                     <div id="show_program">
                         <tag>
-                            <a  href="/shows/mrrobot"><img src="pics/shows/mrrobot1.jpg" style="width:100%; height:100%"></a>
+                            <a  href="/shows/mrrobot"><img src="/pics/shows/mrrobot1.jpg" style="width:100%; height:100%"></a>
                         </tag>
                     </div>
                 </div>
