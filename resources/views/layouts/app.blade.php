@@ -65,6 +65,8 @@
 
                             <li><a href="/channels">Channels</a></li>
 
+                            <li><a href="/shows">TV Shows</a></li>
+
                             <li><a href="/schedule">Schedule</a></li>
 
                             <li><a href="/contact">Contact us</a></li>
