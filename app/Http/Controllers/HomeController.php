@@ -40,9 +40,4 @@ class HomeController extends Controller
     {
         return view('pages.subs');
     }
-
-    public function getShows()
-    {
-        return view('pages.shows');
-    }
 }

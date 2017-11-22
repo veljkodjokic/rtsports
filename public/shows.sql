@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 14, 2017 at 08:51 PM
+-- Generation Time: Nov 22, 2017 at 11:58 AM
 -- Server version: 10.1.28-MariaDB
 -- PHP Version: 7.0.24
 
@@ -25,45 +25,46 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `streams`
+-- Table structure for table `shows`
 --
 
-CREATE TABLE `streams` (
+CREATE TABLE `shows` (
   `id` int(10) UNSIGNED NOT NULL,
-  `source` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `running` tinyint(1) NOT NULL,
+  `name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `cover` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `streams`
+-- Dumping data for table `shows`
 --
 
-INSERT INTO `streams` (`id`, `source`, `running`, `created_at`, `updated_at`) VALUES
-(1, 'https://www.rtsportsbackend.work/hls/stream.m3u8', 0, '2017-11-14 18:37:24', '2017-11-14 18:37:24'),
-(2, 'https://www.rtsportsbackend.work/hls/stream1.m3u8', 0, '2017-11-14 18:37:24', '2017-11-14 18:37:24'),
-(3, 'https://www.rtsportsbackend.work/hls/stream2.m3u8', 0, '2017-11-14 18:37:41', '2017-11-14 18:37:41');
+INSERT INTO `shows` (`id`, `name`, `cover`, `created_at`, `updated_at`) VALUES
+(1, 'Mr. Robot', '1.jpg', '2017-11-22 03:14:13', '2017-11-22 05:11:07'),
+(2, 'Game Of Thrones', '2.jpg', '2017-11-22 00:40:12', '2017-11-22 00:40:12'),
+(3, 'Punisher', '3.jpg', '2017-11-22 01:08:16', '2017-11-22 01:08:16');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `streams`
+-- Indexes for table `shows`
 --
-ALTER TABLE `streams`
+ALTER TABLE `shows`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `streams_source_unique` (`source`);
+  ADD UNIQUE KEY `shows_name_unique` (`name`),
+  ADD UNIQUE KEY `shows_cover_unique` (`cover`);
 
 --
 -- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT for table `streams`
+-- AUTO_INCREMENT for table `shows`
 --
-ALTER TABLE `streams`
+ALTER TABLE `shows`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 

@@ -46,6 +46,7 @@
 
                     <table style="border-collapse: collapse; width: 100%; ">
                       @if(\Auth::user()->admin)
+                      <table style="border-collapse: collapse; width: 100%; ">
                       {!! Form::open(['url'=>'/admin/add_event', 'method'=>'POST']) !!}
                       <tr>
                         <td>{!! Form::text('day','',['id'=>'day', 'style'=>'max-width:150px;', 'placeholder'=>'Date']) !!}</td>
@@ -58,6 +59,7 @@
                         <td>{!! Form::submit('ADD',['style'=>'color:green;']) !!}</td>
                       </tr>
                       {!! Form::close() !!}
+                      </table>
                       @endif
 
                       @foreach($events as $event)

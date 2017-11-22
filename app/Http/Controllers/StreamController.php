@@ -18,9 +18,4 @@ class StreamController extends Controller
     	$streams = Stream::where('id', '!=', $id)->get();
     	return view('player')->with(['streams'=>$streams, 'stream'=>$stream]);
     }
-
-    public function getShow()
-    {
-        return view('showplayer');
-    }
 }

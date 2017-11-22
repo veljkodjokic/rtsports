@@ -23,14 +23,12 @@ Route::get('/home', function(){
 Route::get('/channels', 'HomeController@index')->name('channels');
 Route::get('/schedule', 'HomeController@getSchedule')->name('schedule');
 Route::get('/subscriptions', 'HomeController@getSubs')->name('subscriptions');
-Route::get('/shows', 'HomeController@getShows')->name('shows');
 
 Route::get('/contact', 'ContactController@getContact')->name('contact');
 Route::post('/contact', 'ContactController@sendContact')->name('contact');
 Route::get('/about', 'ContactController@getAbout')->name('about');
 
 Route::get('/game{id}', 'StreamController@getStream');
-Route::get('/shows/mrrobot', 'StreamController@getShow');
 
 Route::get('verifyPaymentFirst', 'StatusController@verifyEmailFirst')->name('verifyPaymentFirst');
 
@@ -42,10 +40,16 @@ Route::get('/account', 'AccountController@getAccount')->name('account');
 //check if auth exp
 Route::post('/check_exp', 'StatusController@checkExp')->name('check_exp');
 
+//TV Show routes
+Route::get('/shows', 'ShowController@index')->name('shows');
+Route::get('/shows/{id}', 'ShowController@getShow');
+Route::get('/shows/{id}/{ep}', 'ShowController@getEpisode');
+
 //ADMIN PANEL!
 Route::middleware(['auth', 'admin'])->group(function () {
 	Route::get('/admin/auth_users', 'AdminController@getAuthUser')->name('/admin/auth_users');
 	Route::get('/admin/log_users', 'AdminController@getUserLog')->name('/admin/log_users');
 	Route::post('/admin/add_event', 'AdminController@postAddEvent')->name('/admin/add_event');
 	Route::post('/admin/del_event', 'AdminController@postDelEvent')->name('/admin/del_event');
+	Route::post('/admin/add_episode', 'AdminController@postAddEpisode')->name('/admin/add_episode');
 });

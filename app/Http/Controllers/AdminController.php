@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\User;
 use App\UserLog;
 use App\Event;
+use App\Episode;
+use App\Show;
 
 class AdminController extends Controller
 {
@@ -44,6 +46,17 @@ class AdminController extends Controller
         $id=$request->id;
         $event = Event::find($id);
         $event->delete();
+        return \Redirect::back();
+    }
+
+    public function postAddEpisode(Request $request)
+    {
+        $episode = new Episode;
+        $episode->season = $request->season;
+        $episode->number = $request->number;
+        $episode->show_id = $request->show;
+        $episode->source = $request->source .'.mp4';
+        $episode->save();
         return \Redirect::back();
     }
 
