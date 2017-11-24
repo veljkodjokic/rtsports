@@ -17,7 +17,7 @@
                         </div>
                     @endif
 
-                    <video id="video" width="100%" height="50%" style="margin:0 auto;" controls>
+                    <video id="video" width="100%" height="50%" style="margin:0 auto;" controls preload="none">
                         <source src="{{ $stream->source }}" type="application/x-mpegURL">
                     </video>
                 </div>
@@ -27,18 +27,11 @@
 </div>
 <div class="side_players_bottom">@include('partials.channel_meni_content')</div>
 
-<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+<link href="//vjs.zencdn.net/5.8/video-js.min.css" rel="stylesheet">
+<script src="//vjs.zencdn.net/5.8/video.min.js"></script>
 
 <script type="text/javascript">
-    if(Hls.isSupported()) {
-        var video = document.getElementById('video');
-        var hls = new Hls();
-        hls.loadSource('{{ $stream->source }}');
-        hls.attachMedia(video);
-        hls.on(Hls.Events.MANIFEST_PARSED,function() {
-            video.play();
-        });
-    }
+    var player = videojs('.video');
 </script>
 @include('partials/auth_check')
 @endsection
