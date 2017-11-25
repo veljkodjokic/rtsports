@@ -27,11 +27,18 @@
 </div>
 <div class="side_players_bottom">@include('partials.channel_meni_content')</div>
 
-<link href="//vjs.zencdn.net/5.8/video-js.min.css" rel="stylesheet">
-<script src="//vjs.zencdn.net/5.8/video.min.js"></script>
-
-<script type="text/javascript">
-    var player = videojs('.video');
+<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+<video id="video"></video>
+<script>
+  if(Hls.isSupported()) {
+    var video = document.getElementById('video');
+    var hls = new Hls();
+    hls.loadSource('{{ $stream->source }}');
+    hls.attachMedia(video);
+    hls.on(Hls.Events.MANIFEST_PARSED,function() {
+      video.play();
+  });
+ }
 </script>
 @include('partials/auth_check')
 @endsection
