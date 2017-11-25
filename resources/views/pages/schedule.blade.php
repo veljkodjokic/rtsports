@@ -58,7 +58,6 @@
                         <td>{!! Form::submit('ADD',['style'=>'color:green;']) !!}</td>
                       </tr>
                       {!! Form::close() !!}
-                      </table>
                       @endif
 
                       @foreach($events as $event)
