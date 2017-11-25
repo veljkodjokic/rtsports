@@ -33,7 +33,12 @@ class HomeController extends Controller
     public function getSchedule()
     {
         $events= Event::Relevant()->orderBy('day')->orderBy('time')->get();
-        return view('pages.schedule')->with('events',$events);
+        $count=Stream::all()->count();
+        $range=range(1,$count);
+        array_unshift($range, 0);
+        unset($range[0]);
+
+        return view('pages.schedule')->with(['events'=>$events,'range'=>$range]);
     }
 
     public function getSubs()

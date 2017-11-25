@@ -55,7 +55,7 @@
                         <td>@</td>
                         <td>{!! Form::text('team2','',['id'=>'team2', 'style'=>'max-width:150px;', 'placeholder'=>'VisitingTeam']) !!}</td>
                         <td>ON</td>
-                        <td>{!! Form::select('stream',['1'=>'1','2'=>'2','3'=>'3','4'=>'4','5'=>'5','6'=>'6','7'=>'7','8'=>'8'],['style'=>'max-width:150px;', 'placeholder'=>'']) !!}</td>
+                        <td>{!! Form::select('stream',$range,['style'=>'max-width:150px;', 'placeholder'=>'']) !!}</td>
                         <td>{!! Form::submit('ADD',['style'=>'color:green;']) !!}</td>
                       </tr>
                       {!! Form::close() !!}
