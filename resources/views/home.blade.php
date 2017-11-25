@@ -44,12 +44,6 @@
                             </tag>
                         </div>
                     @endforeach
-
-                    <div id="kvadrat">
-                        <tag>
-                            <a  href="#game4"><img src="pics/coming.png" style="width:100%; height:100%"></a>
-                        </tag>
-                    </div>
                 </div>
             </div>
         </div>
