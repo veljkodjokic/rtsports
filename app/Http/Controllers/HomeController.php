@@ -32,7 +32,7 @@ class HomeController extends Controller
 
     public function getSchedule()
     {
-        $events= Event::Relevant()->orderBy('day')->orderBy('time')->get();
+        $events= Event::orderBy('day')->orderBy('time')->get();
         $count=Stream::all()->count();
         $range=range(1,$count);
         array_unshift($range, 0);

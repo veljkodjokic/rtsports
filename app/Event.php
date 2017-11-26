@@ -13,9 +13,14 @@ class Event extends Model
 
     protected $dates =['day'];
 
-    public function scopeRelevant($query)
+    public function Relevant()
 	{
-		$query->where('day','>=',Carbon::today());
+		$date=substr($this->day, 0,10);
+		$start=Carbon::parse($date.' '.$this->time);
+		$end=$start->addHours(4);
+		if(Carbon::now()->addHours(1)>$end)
+			return false;
+		return true;
 	}
 
     public function stream()

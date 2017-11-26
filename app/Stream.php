@@ -18,15 +18,17 @@ class Stream extends Model
 
 	public function Live()
 	{
-		$events=\App\Event::where('stream_id',$this->id)->Relevant()->get();
+		$events=\App\Event::where('stream_id',$this->id)->get();
 		foreach($events as $event)
 		{
+			if($event->Relevant()){
 			$date=substr($event->day, 0,10);
 			$start=Carbon::parse($date.' '.$event->time);
 			$end=$start->addHours(4);
 			$start=Carbon::parse($date.' '.$event->time);
 			if($start <  Carbon::Now()->addHours(1)  && Carbon::Now()->addHours(1)  <$end)
 				return true;
+			}
 		}
 		return false;
 	}

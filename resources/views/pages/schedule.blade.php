@@ -78,7 +78,7 @@
                       $weekday = $weekMap[$dayOfTheWeek];
                       $date = \Carbon\Carbon::parse($event->day)->format('d. M');
                       @endphp
-
+                      @if($event->Relevant())
                         <tr>
                           <td>{{ $weekday }} {{ $date }}</td>
                           <td>{{ $hour }}</td>
@@ -95,6 +95,7 @@
                           {!! Form::close() !!}
                       @endif
                         </tr>
+                      @endif
                       @endforeach
                     </table>
 
