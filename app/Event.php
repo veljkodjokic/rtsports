@@ -15,7 +15,7 @@ class Event extends Model
 
     public function scopeRelevant($query)
 	{
-		$query->where('day','>=',Carbon::yesterday());
+		$query->where('day','>=',Carbon::today());
 	}
 
     public function stream()
