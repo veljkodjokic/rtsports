@@ -34,6 +34,7 @@
                         <th>Username</th>
                         <th>Email</th>
                         <th>Date and Time</th>
+                        <th>IP</th>
                       </tr>
                       @foreach($logs->reverse() as $log)
                       @php
@@ -43,6 +44,7 @@
                           <td>{{ $user->name }}</td>
                           <td>{{ $user->email }}</td>
                           <td>{{ \Carbon\Carbon::parse($log->time)->diffForHumans() }}</td>
+                          <td>{{ $log->ip }}</td>
                         </tr>
                       @endforeach
                     </table>
