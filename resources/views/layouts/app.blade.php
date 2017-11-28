@@ -106,6 +106,12 @@
             </div>
         </nav>
 
+        @if(Session::has('err_$'))
+        <script type="text/javascript">
+                swal ( "Permission denied!" ,  "Please pay for a subscription" ,  "error" )
+        </script>
+        @endif
+
         @yield('content')
     </div>
 

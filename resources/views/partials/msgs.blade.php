@@ -21,12 +21,6 @@
                                 </script>
                                 @endif
 
-                                @if(Session::has('err_$'))
-                                <script type="text/javascript">
-                                        swal ( "Permission denied!" ,  "Please pay for a subscription" ,  "error" )
-                                </script>
-                                @endif
-
                                 @if(Session::has('ver_first'))
                                 <script type="text/javascript">
                                         swal ( "Thank you for joining the RTSports team" ,  "An email has been sent to your address with the activation link enclosed in it. In order to activate your account, please click on that link. If you do not see the email, check the spam box just in case your carrier mistook it as a spam" ,  "success" )

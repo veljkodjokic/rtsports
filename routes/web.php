@@ -28,7 +28,7 @@ Route::get('/contact', 'ContactController@getContact')->name('contact');
 Route::post('/contact', 'ContactController@sendContact')->name('contact');
 Route::get('/about', 'ContactController@getAbout')->name('about');
 
-Route::get('/game{id}', 'StreamController@getStream');
+Route::get('/game{id}', 'StreamController@getStream')->middleware('Paid');
 
 Route::get('verify/{id}/{verifyToken}', 'StatusController@sendEmailDone')->name('sendEmailDone');
 
