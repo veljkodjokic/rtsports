@@ -41,7 +41,7 @@
                           <td>{{ $user->name }}</td>
                           <td>{{ $user->email }}</td>
                           <td>@if($user->status) Verified @else Not verified @endif</td>
-                          <td>@if($user->paid) Paid @else Not paid @endif</td>
+                          <td>@if($user->Paid()) Paid @else Not paid @endif</td>
                         </tr>
                       @endforeach
                     </table>
