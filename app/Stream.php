@@ -8,7 +8,7 @@ use Carbon\Carbon;
 class Stream extends Model
 {
     protected $fillable = [
-        'id', 'source', 'running'
+        'source', 'running'
     ];
 
     public function events()

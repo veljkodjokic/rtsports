@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Carbon\Carbon;
 
 class User extends Authenticatable
 {
@@ -27,8 +28,17 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    //public function isOnline()
-    //{
-    //    return Cache::has('user-is-online-' . $this->id);
-    //}
+    public function subscriptions()
+    {
+        return $this->hasMany('\App\Subscription');
+    }
+
+    public function Paid()
+    {
+        $subs=$this->subscriptions()->get();
+        foreach($subs as $sub)
+            if($sub->paid_at <= Carbon::now() && Carbon::now() <= $sub->out_at)
+                return true;
+        return false;
+    }
 }

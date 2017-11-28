@@ -63,7 +63,7 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return $user=User::create([
+        $user=User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
@@ -71,8 +71,8 @@ class RegisterController extends Controller
             'status' => '0',
         ]);
 
-        //$thisUser = User::findOrFail($user->id);
-        //app('App\Http\Controllers\StatusController')->sendEmail($thisUser);
-        //return false;
+        $thisUser = User::findOrFail($user->id);
+        app('App\Http\Controllers\StatusController')->sendEmail($thisUser);
+        return false;
     }
 }

@@ -14,10 +14,6 @@ class StatusController extends Controller
         Mail::to($thisUser['email'])->send(new verifyEmail($thisUser));
     }
 
-    public function verifyEmailFirst()
-    {
-        return view('email.verifyEmailFirst');
-    }
 
     public function sendEmailDone($id, $verifyToken)
     {
