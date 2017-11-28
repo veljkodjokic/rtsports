@@ -60,4 +60,16 @@ class AdminController extends Controller
         return \Redirect::back();
     }
 
+    public function postSearchLogsa(Request $request)
+    {
+        $logs=UserLog::orderBy('user')->get();
+        return \View::make('partials.searchedLogs')->with('logs',$logs);
+    }
+
+    public function postSearchLogsd(Request $request)
+    {
+        $logs=UserLog::orderbyDesc('user')->get();
+        return \View::make('partials.searchedLogs')->with('logs',$logs);
+    }
+
 }

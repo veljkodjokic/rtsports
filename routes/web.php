@@ -52,4 +52,6 @@ Route::middleware(['auth', 'admin'])->group(function () {
 	Route::post('/admin/add_event', 'AdminController@postAddEvent')->name('/admin/add_event');
 	Route::post('/admin/del_event', 'AdminController@postDelEvent')->name('/admin/del_event');
 	Route::post('/admin/add_episode', 'AdminController@postAddEpisode')->name('/admin/add_episode');
+	Route::post('/admin/search_logsa', 'AdminController@postSearchLogsa')->name('/admin/search_logs');
+	Route::post('/admin/search_logsd', 'AdminController@postSearchLogsd')->name('/admin/search_logs');
 });

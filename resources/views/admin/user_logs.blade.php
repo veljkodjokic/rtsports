@@ -26,9 +26,13 @@
         
             <div class="panel panel-default">
                 <div class="panel-heading">All User Login Logs</div>
-
-                <div class="panel-body">
-
+                <div class="panel-body" id="inflate-content">
+                  <div style="margin-left: 60%; position: relative;">
+                    @if(\Auth::user()->admin)
+                        {!! Form::submit('ORDER ASC',['style'=>'color:green;', 'onclick'=>'asc()']) !!}
+                        {!! Form::submit('ORDER DESC',['style'=>'color:green;', 'onclick'=>'desc()']) !!}
+                    @endif
+                    </div>
                     <table style="border-collapse: collapse; width: 100%;">
                       <tr>
                         <th>Username</th>
@@ -48,11 +52,30 @@
                         </tr>
                       @endforeach
                     </table>
-
+                  </div>
                 </div>
             </div>
        
     </div>
 </div>
+
+<script type="text/javascript">
+  function asc()
+  {
+    $.post('/admin/search_logsa', function(markup)
+    {
+        $('#inflate-content').html(markup);
+    });
+  };
+
+  function desc()
+  {
+    $.post('/admin/search_logsd', function(markup)
+    {
+        $('#inflate-content').html(markup);
+    });
+  };
+</script>
+
 @include('partials/auth_check')
 @endsection
