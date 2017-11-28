@@ -50,9 +50,9 @@
                       <tr>
                         <td>{!! Form::text('day','',['id'=>'day', 'style'=>'max-width:150px;', 'placeholder'=>'Date']) !!}</td>
                         <td>{!! Form::text('time','',['id'=>'hour', 'style'=>'max-width:150px;', 'placeholder'=>'Time']) !!}</td>
-                        <td>{!! Form::text('team1','',['id'=>'team1', 'style'=>'max-width:150px;', 'placeholder'=>'HomeTeam']) !!}</td>
+                        <td>{!! Form::text('team1','',['id'=>'team1', 'style'=>'max-width:150px;', 'placeholder'=>'Visiting Team']) !!}</td>
                         <td>@</td>
-                        <td>{!! Form::text('team2','',['id'=>'team2', 'style'=>'max-width:150px;', 'placeholder'=>'VisitingTeam']) !!}</td>
+                        <td>{!! Form::text('team2','',['id'=>'team2', 'style'=>'max-width:150px;', 'placeholder'=>'Home Team']) !!}</td>
                         <td>ON</td>
                         <td>{!! Form::select('stream',$range,['style'=>'max-width:150px;', 'placeholder'=>'']) !!}</td>
                         <td>{!! Form::submit('ADD',['style'=>'color:green;']) !!}</td>
@@ -65,13 +65,13 @@
                       $stream=$event->stream()->first();
 
                       $weekMap = [
-                          0 => 'Nedelja',
-                          1 => 'Ponedeljak',
-                          2 => 'Utorak',
-                          3 => 'Sreda',
-                          4 => 'Cetvrtak',
-                          5 => 'Petak',
-                          6 => 'Subota',
+                          0 => 'Sunday',
+                          1 => 'Monday',
+                          2 => 'Tuesday',
+                          3 => 'Wednesday',
+                          4 => 'Thursday',
+                          5 => 'Friday',
+                          6 => 'Saturday',
                       ];
                       $dayOfTheWeek = \Carbon\Carbon::parse($event->day)->dayOfWeek;
                       $hour = \Carbon\Carbon::parse($event->time)->format('H:i');
