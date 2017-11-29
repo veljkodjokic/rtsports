@@ -30,7 +30,7 @@ Route::get('/about', 'ContactController@getAbout')->name('about');
 
 Route::get('/game{id}', 'StreamController@getStream')->middleware('Paid');
 
-Route::get('/verify/{id}/{verifyToken}', 'StatusController@sendEmailDone');
+Route::get('/verify/{id}/{verifyToken}', 'StatusController@sendEmailDone')->name('sendEmailDone');
 
 //Edit account pages
 Route::get('/account', 'AccountController@getAccount')->name('account');
