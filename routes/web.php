@@ -52,4 +52,6 @@ Route::middleware(['auth', 'admin'])->group(function () {
 	Route::post('/admin/add_episode', 'AdminController@postAddEpisode')->name('/admin/add_episode');
 	Route::post('/admin/search_logsa', 'AdminController@postSearchLogsa')->name('/admin/search_logs');
 	Route::post('/admin/search_logsd', 'AdminController@postSearchLogsd')->name('/admin/search_logs');
+	Route::post('/admin/add_sub', 'AdminController@postAddSub')->name('/admin/add_sub');
+	Route::post('/admin/delete_sub', 'AdminController@postDelSub')->name('/admin/delete_sub');
 });

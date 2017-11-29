@@ -22,7 +22,9 @@
     <link href="/css/app.css" rel="stylesheet">
     <script src="{{ asset('js/app.js') }}"></script>
     <script src="//code.jquery.com/jquery-1.6.4.min.js" type="text/javascript"></script>
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.0.6/sweetalert2.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.0.6/sweetalert2.min.css" rel="stylesheet">
+
 
 </head>
 <body style="background-color: #231F20;">

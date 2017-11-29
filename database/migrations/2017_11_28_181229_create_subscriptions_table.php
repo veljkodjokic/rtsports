@@ -16,9 +16,9 @@ class CreateSubscriptionsTable extends Migration
     {
         Schema::create('subscriptions', function (Blueprint $table) {
             $table->increments('id');
-            $table->dateTime('paid_at')->default(Carbon::now());
-            $table->dateTime('out_at')->default(Carbon::now()->addMonths(1));
-            $table->boolean('type') ->default(0);
+            $table->dateTime('paid_at');
+            $table->dateTime('out_at');
+            $table->integer('type') ->default(1);
             $table->integer('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });

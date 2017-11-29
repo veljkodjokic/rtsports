@@ -26,7 +26,7 @@ class Stream extends Model
 			$start=Carbon::parse($date.' '.$event->time);
 			$end=$start->addHours(4);
 			$start=Carbon::parse($date.' '.$event->time);
-			if($start <  Carbon::Now()->addHours(1)  && Carbon::Now()->addHours(1)  <$end)
+			if($start <  Carbon::Now()  && Carbon::Now()  <$end)
 				return true;
 			}
 		}

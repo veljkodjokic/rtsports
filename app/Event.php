@@ -18,7 +18,7 @@ class Event extends Model
 		$date=substr($this->day, 0,10);
 		$start=Carbon::parse($date.' '.$this->time);
 		$end=$start->addHours(4);
-		if(Carbon::now()->addHours(1)>$end)
+		if(Carbon::now()>$end)
 			return false;
 		return true;
 	}

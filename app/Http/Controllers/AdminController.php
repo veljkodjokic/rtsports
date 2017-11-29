@@ -5,9 +5,11 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use App\UserLog;
+use Carbon\Carbon;
 use App\Event;
 use App\Episode;
 use App\Show;
+use App\Subscription;
 
 class AdminController extends Controller
 {
@@ -70,6 +72,51 @@ class AdminController extends Controller
     {
         $logs=UserLog::orderbyDesc('user')->get();
         return \View::make('partials.searchedLogs')->with('logs',$logs);
+    }
+
+    public function postAddSub(Request $request)
+    {
+        $type=$request->input( '_type' );
+        $email=$request->input( '_user' );
+        $user= User::Where('email',$email)->first();
+
+        if($type==0)
+        {
+            $sub = new Subscription();
+            $sub->paid_at=Carbon::now();
+            $sub->out_at=Carbon::now()->addDays(2);
+            $sub->type=$type;
+            $sub->user_id=$user->id;
+            $sub->save(); 
+        }
+        if($type==1)
+        {
+            $sub = new Subscription();
+            $sub->paid_at=Carbon::now();
+            $sub->out_at=Carbon::now()->addMonths(1);
+            $sub->type=$type;
+            $sub->user_id=$user->id;
+            $sub->save(); 
+        }
+        if($type==2)
+        {
+            $year=new Carbon('this year');
+            $july=$year->addMonths(7)->addDays(2);
+
+            $sub = new Subscription();
+            $sub->paid_at=Carbon::now();
+            $sub->out_at=$july;
+            $sub->type=$type;
+            $sub->user_id=$user->id;
+            $sub->save(); 
+        }
+         
+    }
+
+    public function postDelSub(Request $request)
+    {
+        $logs=UserLog::orderbyDesc('user')->get();
+        return false;
     }
 
 }
