@@ -12,8 +12,6 @@
     <meta property=og:description content='The best Real-Time Sports platform out there! '>
     <meta property=og:image content='https://rtsports.us/pics/samo logo pez pozadine.png'>
 
-    <meta name="google-site-verification" content="0u2K-2Gap_XmEGa1BoWktaaUWBsjdM395FySOJQ6BcY" />
-
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
