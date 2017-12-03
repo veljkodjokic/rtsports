@@ -3,9 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use \App\Stream;
+use App\Stream;
 use Carbon\Carbon;
-use \App\Event;
+use App\Event;
+use App\Team;
 
 class HomeController extends Controller
 {
@@ -38,7 +39,12 @@ class HomeController extends Controller
         array_unshift($range, 0);
         unset($range[0]);
 
-        return view('pages.schedule')->with(['events'=>$events,'range'=>$range]);
+        $teams_array = array();
+        $teams=Team::all();
+        foreach($teams as $team)
+            $teams_array[$team->team] = $team->name;
+
+        return view('pages.schedule')->with(['events'=>$events,'range'=>$range, 'teams'=>$teams_array]);
     }
 
     public function getSubs()

@@ -27,14 +27,4 @@ class Event extends Model
 	{
 		return $this->belongsTo('\App\Stream');
 	}
-
-	public function team1()
-	{
-		//nabavi team 1
-	}
-
-	public function team2()
-	{
-		//nabavi team 2
-	}
 }

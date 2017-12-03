@@ -30,7 +30,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Channels</div>
 
-                <div class="panel-body" style="height:90%">
+                <div class="panel-body" style="height:90%;">
                     @if (session('status'))
                         <div class="alert alert-success">
                             {{ session('status') }}
@@ -38,11 +38,37 @@
                     @endif
 
                     @foreach($streams as $stream)
+
+                    @if($stream->upNext())
+                    @php
+                        $event=$stream->upNext();
+
+                        $team1=App\Team::where('team',$event['team1'])->get()->first();
+                        $team2=App\Team::where('team',$event['team2'])->get()->first();
+
+                        $name1=$team1['name'];
+                        $name2=$team2['name'];
+
+                        $time=Carbon\Carbon::parse($event['time'])->format('h:i');
+                        $day=Carbon\Carbon::parse($event['day'])->format('m/d');
+                    @endphp
                         <div id="kvadrat">
-                            <tag>
-                                <a  href="/game{{$stream->id}}"><img src="pics/game{{ $stream->id }}.png" style="width:100%; height:100%;">@if($stream->Live())<div id="live_stream"><b>&#9673;LIVE</b></div>@endif</a>
-                            </tag>
+                            <a id="game-link" href="/game{{$stream->id}}">
+                                <div id="team-left">
+                                    <div id="team-logo"><img src="/pics/teams/{{ $event['team1'] }}.png" id="logo-img"></div>
+                                    <div id="team-name">{{ $name1 }}</div>
+                                </div>
+                                <div id="game-info">
+                                    <div id="game-time">{{ $time }}<raw style="font-size: 15pt; font-weight: 15;">UTC+1</raw></div>
+                                    <div id="game-date">{{ $day }}</div>
+                                </div>
+                                <div id="team-rigth">
+                                    <div id="team-logo"><img src="/pics/teams/{{ $event['team2'] }}.png" id="logo-img"></div>
+                                    <div id="team-name">{{ $name2 }}</div>
+                                </div>
+                            </a>
                         </div>
+                    @endif
                     @endforeach
                 </div>
             </div>

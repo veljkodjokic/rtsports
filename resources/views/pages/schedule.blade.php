@@ -50,9 +50,9 @@
                       <tr>
                         <td>{!! Form::text('day','',['id'=>'day', 'style'=>'max-width:150px;', 'placeholder'=>'Date']) !!}</td>
                         <td>{!! Form::text('time','',['id'=>'hour', 'style'=>'max-width:150px;', 'placeholder'=>'Time']) !!}</td>
-                        <td>{!! Form::text('team1','',['id'=>'team1', 'style'=>'max-width:150px;', 'placeholder'=>'Visiting Team']) !!}</td>
+                        <td>{!! Form::select('team1',$teams,['id'=>'team1', 'style'=>'max-width:150px;', 'placeholder'=>'Visiting Team']) !!}</td>
                         <td>@</td>
-                        <td>{!! Form::text('team2','',['id'=>'team2', 'style'=>'max-width:150px;', 'placeholder'=>'Home Team']) !!}</td>
+                        <td>{!! Form::select('team2',$teams,['id'=>'team2', 'style'=>'max-width:150px;', 'placeholder'=>'Home Team']) !!}</td>
                         <td>ON</td>
                         <td>{!! Form::select('stream',$range,['style'=>'max-width:150px;', 'placeholder'=>'']) !!}</td>
                         <td>{!! Form::submit('ADD',['style'=>'color:green;']) !!}</td>
@@ -77,14 +77,17 @@
                       $hour = \Carbon\Carbon::parse($event->time)->format('H:i');
                       $weekday = $weekMap[$dayOfTheWeek];
                       $date = \Carbon\Carbon::parse($event->day)->format('d. M');
+
+                      $team1=App\Team::where('team',$event->team1)->get()[0]['name'];
+                      $team2=App\Team::where('team',$event->team2)->get()[0]['name'];
                       @endphp
                       @if($event->Relevant())
                         <tr>
                           <td>{{ $weekday }} {{ $date }}</td>
                           <td>{{ $hour }}</td>
-                          <td>{{ $event->team1 }}</td>
+                          <td>{{ $team1 }}</td>
                           <td>@</td>
-                          <td>{{ $event->team2 }}</td>
+                          <td>{{ $team2 }}</td>
                           <td style="text-align: left;">ON</td>
                           <td><a href="/game{{ $event->stream_id }}">Channel#{{ $stream->id }}</a></td>
                       @if(\Auth::user()->admin)
