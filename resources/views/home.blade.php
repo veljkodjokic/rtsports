@@ -52,15 +52,15 @@
                         $time=Carbon\Carbon::parse($event['time'])->format('h:i');
                         $day=Carbon\Carbon::parse($event['day'])->format('m/d');
                     @endphp
-                        <div id="kvadrat">
+                        <div id="kvadrat" @if($stream->Live()) style="font-color: red;" @endif>
                             <a id="game-link" href="/game{{$stream->id}}">
                                 <div id="team-left">
                                     <div id="team-logo"><img src="/pics/teams/{{ $event['team1'] }}.png" id="logo-img"></div>
                                     <div id="team-name">{{ $name1 }}</div>
                                 </div>
                                 <div id="game-info">
-                                    <div id="game-time">{{ $time }}<raw style="font-size: 15pt; font-weight: 15;">UTC+1</raw></div>
-                                    <div id="game-date">{{ $day }}</div>
+                                    <div id="game-time" @if($stream->Live()) style="color: red;" @endif>{{ $time }}<raw style="font-size: 15pt; font-weight: 15;">UTC+1</raw></div>
+                                    <div id="game-date" @if($stream->Live()) style="color: red;" @endif>{{ $day }}</div>
                                 </div>
                                 <div id="team-rigth">
                                     <div id="team-logo"><img src="/pics/teams/{{ $event['team2'] }}.png" id="logo-img"></div>
