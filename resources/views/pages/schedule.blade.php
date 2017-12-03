@@ -80,14 +80,17 @@
 
                       $team1=App\Team::where('team',$event->team1)->get()[0]['name'];
                       $team2=App\Team::where('team',$event->team2)->get()[0]['name'];
+
+                      $png1=App\Team::where('team',$event->team1)->get()[0]['team'];
+                      $png2=App\Team::where('team',$event->team2)->get()[0]['team'];
                       @endphp
                       @if($event->Relevant())
                         <tr>
                           <td>{{ $weekday }} {{ $date }}</td>
                           <td>{{ $hour }}</td>
-                          <td>{{ $team1 }}</td>
-                          <td>@</td>
-                          <td>{{ $team2 }}</td>
+                          <td><img src="/pics/teams/{{ $png1 }}.png"><br>{{ $team1 }}</td>
+                          <td style="font-weight: 50; font-size: 25pt;">@</td>
+                          <td><img src="/pics/teams/{{ $png2 }}.png"><br>{{ $team2 }}</td>
                           <td style="text-align: left;">ON</td>
                           <td><a href="/game{{ $event->stream_id }}">Channel#{{ $stream->id }}</a></td>
                       @if(\Auth::user()->admin)
