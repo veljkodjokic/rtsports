@@ -36,8 +36,8 @@
                     <div id="team-name">{{ $name1 }}</div>
                 </div>
                 <div id="game-info">
-                    <div id="game-time">{{ $time }}<raw style="font-size: 15pt; font-weight: 15;">UTC+1</raw></div>
-                    <div id="game-date">{{ $day }}</div>
+                    <div id="game-time" @if($stream->Live()) style="font-color: red;" @endif>{{ $time }}<raw style="font-size: 15pt; font-weight: 15;">UTC+1</raw></div>
+                    <div id="game-date" @if($stream->Live()) style="font-color: red;" @endif>{{ $day }}</div>
                 </div>
                 <div id="team-rigth">
                     <div id="team-logo" style="margin-bottom: 15px;"><img src="/pics/teams/{{ $event['team2'] }}.png" id="logo-img"></div>
