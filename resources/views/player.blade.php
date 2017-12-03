@@ -8,7 +8,17 @@
     <div class="row">
         <div class="col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Channel {{ $stream->id }}</div>
+                <div class="panel-heading" style="border-bottom: 10px;">
+                    <div style="float: left; width: 33%; text-align: center; position: relative;">
+                        @if($stream->id != 1)<a href="/game{{ ($stream->id)-1 }}"><< Previous channel</a> 
+                        @else First channel
+                        @endif</div>
+                    <div style="float: left; width: 33%; text-align: center; position: relative;">Channel #{{ $stream->id }}</div>
+                    <div style="float: left; width: 33%; text-align: center; position: relative;">
+                        @if($stream->id != App\Stream::count())<a href="/game{{ ($stream->id)+1 }}">Next cahnnel >></a>
+                        @else Last channel
+                        @endif</div>
+                </div>
 
                 <div class="panel-body" style="height:90%">
                     @if (session('status'))
