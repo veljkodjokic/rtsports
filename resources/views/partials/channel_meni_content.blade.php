@@ -32,15 +32,17 @@
         <div id="kvadrat" style="margin: 0 auto;  width: 100%; max-width: 800px; height: 160px; margin-bottom: -20px;">
             <a id="game-link" href="/game{{$theStream->id}}">
                 <div id="team-left">
-                    <div id="team-logo" style="margin-bottom: 15px;"><img src="/pics/teams/{{ $event['team1'] }}.png" id="logo-img"></div>
+                    <div id="team-logo" style="margin-bottom: 15px;"><img src="/pics/teams/{{ $event['team1'] }}.png" style="max-width:100%;
+  max-height:100%;" id="logo-img"></div>
                     <div id="team-name">{{ $name1 }}</div>
                 </div>
                 <div id="game-info">
-                    <div id="game-time" @if($stream->Live()) style="font-color: red;" @endif>{{ $time }}<raw style="font-size: 15pt; font-weight: 15;">UTC+1</raw></div>
+                    <div id="game-time" @if($stream->Live()) style="font-color: red;" @endif>{{ $time }}<raw style="font-size: 15pt; font-weight: 15;"> UTC +1</raw></div>
                     <div id="game-date" @if($stream->Live()) style="font-color: red;" @endif>{{ $day }}</div>
                 </div>
                 <div id="team-rigth">
-                    <div id="team-logo" style="margin-bottom: 15px;"><img src="/pics/teams/{{ $event['team2'] }}.png" id="logo-img"></div>
+                    <div id="team-logo" style="margin-bottom: 15px;"><img src="/pics/teams/{{ $event['team2'] }}.png" style="max-width:100%;
+  max-height:100%;" id="logo-img"></div>
                     <div id="team-name">{{ $name2 }}</div>
                 </div>
             </a>

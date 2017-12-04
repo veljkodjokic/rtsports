@@ -143,13 +143,14 @@ td, th {
 #team-name{
 	font-family: Calibri;
 	display: inline-block;
-	font-size: 20pt;
+	font-size: 16pt;
 	font-weight: 15;
 	text-align: center;
 	position: relative;
 	float: left;
 	height: 30%;
 	width:100%;
+	white-space:nowrap;
 }
 
 #game-time{
@@ -158,10 +159,11 @@ td, th {
 	position: relative;
 	float: left;
 	text-align: center;
-	font-size: 20pt;
+	font-size: 16pt;
 	font-weight: 15;
 	height: 50%;
 	width:100%;
+	white-space:nowrap;
 }
 
 #game-date{
