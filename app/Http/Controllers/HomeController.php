@@ -7,6 +7,7 @@ use App\Stream;
 use Carbon\Carbon;
 use App\Event;
 use App\Team;
+use App\Subscription;
 
 class HomeController extends Controller
 {
@@ -49,6 +50,8 @@ class HomeController extends Controller
 
     public function getSubs()
     {
-        return view('pages.subs');
+        $arch=Subscription::where('user_id',\Auth::id())->where('out_at','<',Carbon::now())->get();
+        $subs=Subscription::where('user_id',\Auth::id())->where('out_at','>',Carbon::now())->get();
+        return view('pages.subs')->with(['subs'=>$subs, 'arch'=>$arch]);
     }
 }
