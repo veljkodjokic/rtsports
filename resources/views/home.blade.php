@@ -49,7 +49,7 @@
                         $name1=$team1['name'];
                         $name2=$team2['name'];
 
-                        $time=Carbon\Carbon::parse($event['time'])->format('h:i');
+                        $time=Carbon\Carbon::parse($event['time'])->format('H:i');
                         $day=Carbon\Carbon::parse($event['day'])->format('m/d');
                     @endphp
                         <div id="kvadrat" @if($stream->Live()) style="font-color: red;" @endif>
