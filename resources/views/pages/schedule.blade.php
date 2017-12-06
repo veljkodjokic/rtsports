@@ -88,9 +88,9 @@
                         <tr>
                           <td>{{ $weekday }} {{ $date }}</td>
                           <td>{{ $hour }}</td>
-                          <td><img src="/pics/teams/{{ $png1 }}.png"><br>{{ $team1 }}</td>
+                          <td><img src="/pics/teams/{{ $png1 }}.png" style="width: 100%; height: 100%;"><br>{{ $team1 }}</td>
                           <td style="font-weight: 50; font-size: 25pt;">@</td>
-                          <td><img src="/pics/teams/{{ $png2 }}.png"><br>{{ $team2 }}</td>
+                          <td><img src="/pics/teams/{{ $png2 }}.png" style="width: 100%; height: 100%;"><br>{{ $team2 }}</td>
                           <td style="text-align: left;">ON</td>
                           <td><a href="/game{{ $event->stream_id }}">Channel#{{ $stream->id }}</a></td>
                       @if(\Auth::user()->admin)
