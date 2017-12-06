@@ -72,8 +72,8 @@ class RegisterController extends Controller
         ]);
 
         $thisUser = User::findOrFail($user->id);
-        app('App\Http\Controllers\StatusController')->sendEmail($thisUser);
-        app('App\Http\Controllers\StatusController')->sendInfo($thisUser);
+        //app('App\Http\Controllers\StatusController')->sendEmail($thisUser);
+        //app('App\Http\Controllers\StatusController')->sendInfo($thisUser);
         return false;
     }
 }
