@@ -37,6 +37,12 @@
                         </div>
                     @endif
 
+                    <div id="kvadrat" style="vertical-align: top">
+                            <a href="/game8">
+                                <img src="/pics/nbatv.png" style="width: 100%; height: 100%;">
+                            </a>
+                        </div>
+
                     @foreach($streams as $stream)
 
                     @if($stream->upNext())
