@@ -52,7 +52,7 @@
 
 @endforeach
 
-@if(!$stream->id==8)
+@if(!$theStream->id==8)
     <div id="kvadrat" style="margin: 0 auto;  width: 100%; max-width: 800px; height: 160px; margin-bottom: -20px;">
         <a href="/game8">
             <img src="/pics/nbatv.png" style="width: 100%; height: 100%;">
