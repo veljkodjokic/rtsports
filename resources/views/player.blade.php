@@ -50,5 +50,12 @@
   });
  }
 </script>
+
+@if(Session::has('trl'))
+<script type="text/javascript">
+        swal ( "Warning!" ,  "You have a trial subscription, our services will only be available for 48h." ,  "warning" )
+</script>
+@endif
+
 @include('partials/auth_check')
 @endsection
