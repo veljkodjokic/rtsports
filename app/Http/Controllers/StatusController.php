@@ -27,7 +27,7 @@ class StatusController extends Controller
 
     public function sendInfo($thisUser)
     {
-        Mail::to('administration@rtsports.us')->send(new \App\Mail\RegistrationInfo($thisUser));
+        Mail::to('administration@rtsportsbackend.work')->send(new \App\Mail\RegistrationInfo($thisUser));
     }
 
     public function checkExp()

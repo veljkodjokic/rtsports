@@ -56,7 +56,7 @@ return [
     */
 
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'info@rtsports.us'),
+        'address' => env('MAIL_FROM_ADDRESS', 'info@rtsportsbackend.work'),
         'name' => env('MAIL_FROM_NAME', 'RTSports'),
     ],
 
@@ -84,9 +84,9 @@ return [
     |
     */
 
-    'username' => env('postmaster@email.rtsports.us'),
+    'username' => env('postmaster@mail.rtsportsbackend.work'),
 
-    'password' => env('d3dee8b08442b28eb365ed3e2ada929a'),
+    'password' => env('b8383be046d7025a3dabfc2c736fcd06'),
 
     /*
     |--------------------------------------------------------------------------
