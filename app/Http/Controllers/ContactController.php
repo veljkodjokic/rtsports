@@ -32,7 +32,7 @@ class ContactController extends Controller
         $content=$request->input('content');
         $category=$request->input('category');
         $formular=['email'=>$email,'content'=>$content, 'category'=>$category];
-        Mail::to('info@rtsports.us')->send(new ContactUsMail($formular));
+        Mail::to('info@rtsportsbackend.work')->send(new ContactUsMail($formular));
         \Session::flash('succs');
         return \Redirect::back();
     }
