@@ -16,7 +16,7 @@ return [
 
     'mailgun' => [
         'domain' => 'mail.rtsportsbackend.work',
-        'secret' => 'key-2d4d5d58b5cdef4dbb06e54512102b62',
+        'secret' => 'bullshit',
     ],
 
     'ses' => [
