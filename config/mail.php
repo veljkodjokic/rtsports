@@ -84,9 +84,9 @@ return [
     |
     */
 
-    'username' => env('postmaster@mail.rtsportsbackend.work'),
+    'username' => env('MAIL_USERNAME'),
 
-    'password' => env('b8383be046d7025a3dabfc2c736fcd06'),
+    'password' => env('MAIL_PASSWORD'),
 
     /*
     |--------------------------------------------------------------------------
