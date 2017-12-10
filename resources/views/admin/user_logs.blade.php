@@ -28,10 +28,8 @@
                 <div class="panel-heading">All User Login Logs</div>
                 <div class="panel-body" id="inflate-content">
                   <div style="margin-left: 60%; position: relative;">
-                    @if(\Auth::user()->admin)
-                        {!! Form::submit('ORDER ASC',['style'=>'color:green;', 'onclick'=>'asc()']) !!}
-                        {!! Form::submit('ORDER DESC',['style'=>'color:green;', 'onclick'=>'desc()']) !!}
-                    @endif
+                    {!! Form::submit('ORDER ASC',['style'=>'color:green;', 'onclick'=>'asc()']) !!}
+                    {!! Form::submit('ORDER DESC',['style'=>'color:green;', 'onclick'=>'desc()']) !!}
                     </div>
                     <table style="border-collapse: collapse; width: 100%;">
                       <tr>
@@ -44,12 +42,14 @@
                       @php
                         $user=\App\User::find($log->user);
                       @endphp
+                      @if($user)
                         <tr>
                           <td>{{ $user->name }}</td>
                           <td>{{ $user->email }}</td>
                           <td>{{ \Carbon\Carbon::parse($log->time)->diffForHumans() }}</td>
                           <td>{{ $log->ip }}</td>
                         </tr>
+                      @endif
                       @endforeach
                     </table>
                   </div>
