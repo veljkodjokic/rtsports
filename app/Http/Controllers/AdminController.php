@@ -8,6 +8,7 @@ use App\UserLog;
 use Carbon\Carbon;
 use App\Event;
 use App\Episode;
+use App\Stream;
 use App\Show;
 use App\Subscription;
 
@@ -117,6 +118,12 @@ class AdminController extends Controller
     {
         $logs=UserLog::orderbyDesc('user')->get();
         return false;
+    }
+
+    public function getEditChannels()
+    {
+        $streams=Stream::all();
+        return view('admin.edit_channels');
     }
 
 }
