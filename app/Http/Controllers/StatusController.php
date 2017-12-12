@@ -36,6 +36,11 @@ class StatusController extends Controller
             return '/';
         return null;   
     }
+
+    public function sendTrialExp(User $user)
+    {
+        Mail::to($user->email)->send(new \App\Mail\Trial_Exp($user));
+    }
 }
 
     

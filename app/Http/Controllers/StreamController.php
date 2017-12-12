@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use \App\Stream;
+use Carbon\Carbon;
 use \App\Subscription;
 
 class StreamController extends Controller
@@ -19,9 +20,10 @@ class StreamController extends Controller
     	$streams = Stream::where('id', '!=', $id)->get();
 
         $user=\Auth::user();
-        $sub=Subscription::where('user_id',$user->id)->where('type',0)->get();
-        if($sub && !$user->admin)
+        $sub=Subscription::where('user_id',$user->id)->where('type',0)->where('out_at','>',Carbon::now())->get();
+        if(!$sub->isEmpty() && !$user->admin)
             \Session::flash('trl');
+        
 
     	return view('player')->with(['streams'=>$streams, 'stream'=>$stream]);
     }
