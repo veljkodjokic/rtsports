@@ -48,6 +48,8 @@ class expMail extends Command
                 $user=User::findOrFail($subs[$i]->user_id);
                 Subscription::where('user_id',$user->id)->delete();
                 app('App\Http\Controllers\StatusController')->sendTrialExp($user);
+                $user->payment=1;
+                $user->save();
             }
         }
     }
