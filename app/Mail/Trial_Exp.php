@@ -33,6 +33,6 @@ class Trial_Exp extends Mailable
     public function build()
     {
         $user=$this->user;
-        return $this->subject('Trial Expired')->view('email.trial_exp')->with('user',$user);
+        return $this->view('email.trial_exp')->with('user',$user);
     }
 }
