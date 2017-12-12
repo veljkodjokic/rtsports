@@ -54,6 +54,11 @@
                                 <a class="btn btn-link" href="{{ route('password.request') }}">
                                     Forgot Your Password?
                                 </a>
+
+                                <br>
+                                <a class="btn btn-link" href="/resend">
+                                    Resend Verification Email
+                                </a>
                             </div>
                         </div>
                     </form>

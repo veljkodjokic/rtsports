@@ -10,6 +10,8 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/resend', 'Auth\LoginController@getResend')->name('resend');
+Route::post('/resend', 'Auth\LoginController@postResend')->name('resend');
 
 Route::get('/', function () {
     return view('welcome');
@@ -20,6 +22,7 @@ Auth::routes();
 Route::get('/home', function(){
 	return redirect('/channels');
 });
+
 Route::get('/channels', 'HomeController@index')->name('channels');
 Route::get('/schedule', 'HomeController@getSchedule')->name('schedule');
 Route::get('/subscriptions', 'HomeController@getSubs')->name('subscriptions');
