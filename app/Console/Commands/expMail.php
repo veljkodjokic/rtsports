@@ -52,5 +52,7 @@ class expMail extends Command
                 $user->save();
             }
         }
+
+        $this->info('Daily trial expiration emails have been sent successfully');
     }
 }
