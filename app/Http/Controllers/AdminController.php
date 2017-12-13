@@ -123,7 +123,20 @@ class AdminController extends Controller
     public function getEditChannels()
     {
         $streams=Stream::all();
-        return view('admin.edit_channels');
+        return view('admin.edit_channels')->with('streams',$streams);
+    }
+
+    public function postEditStream(Request $request)
+    {
+        $source = $request->source;
+        $id = $request->id;
+        
+        $stream=Stream::findOrFail($id);
+        $stream->source=$source;
+        $stream->save();
+
+        \Session::flash('succs');
+        return redirect('/admin/edit_channels');
     }
 
 }
