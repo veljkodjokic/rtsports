@@ -8,6 +8,7 @@ use Carbon\Carbon;
 use App\Event;
 use App\Team;
 use App\Subscription;
+use App\UserLog;
 
 class HomeController extends Controller
 {

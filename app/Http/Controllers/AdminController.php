@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use App\UserLog;
+use App\GuestLog;
 use Carbon\Carbon;
 use App\Event;
 use App\Episode;
@@ -28,8 +29,10 @@ class AdminController extends Controller
 
     public function getUserLog()
     {
+        $reg_count=UserLog::select('ip')->distinct()->get()->count();
+        $guest_count=GuestLog::select('ip')->distinct()->get()->count();
         $logs = UserLog::all();
-        return view('admin.user_logs')->with('logs',$logs);
+        return view('admin.user_logs')->with(['logs'=>$logs,'reg_count'=>$reg_count,'guest_count'=>$guest_count]);
     }
 
     public function postAddEvent(Request $request)

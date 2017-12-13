@@ -13,9 +13,7 @@
 Route::get('/resend', 'Auth\LoginController@getResend')->name('resend');
 Route::post('/resend', 'Auth\LoginController@postResend')->name('resend');
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'StatusController@welcome');
 
 Auth::routes();
 

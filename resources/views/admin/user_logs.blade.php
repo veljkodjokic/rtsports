@@ -33,6 +33,15 @@
                     </div>
                     <table style="border-collapse: collapse; width: 100%;">
                       <tr>
+                        <th>Registered visits</th>
+                        <th>Unique guest visits</th>
+                      </tr>
+                      <tr>
+                        <td style="color:green">{{ $reg_count }}</td>
+                        <td style="color:orange">{{ $guest_count }}</td>
+                      </tr>
+
+                      <tr>
                         <th>Username</th>
                         <th>Email</th>
                         <th>Date and Time</th>

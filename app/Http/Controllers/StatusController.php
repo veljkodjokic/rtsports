@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use App\UserLog;
+use App\GuestLog;
 use Mail;
 use App\Mail\verifyEmail;
 
@@ -12,6 +14,28 @@ class StatusController extends Controller
     public function sendEmail($thisUser)
     {
         Mail::to($thisUser['email'])->send(new verifyEmail($thisUser));
+    }
+
+    public function welcome()
+    {
+        if(\Auth::User())
+            return redirect('/channels');
+            
+        $ip=\Request::ip();
+        $ex=0;
+        $user_logs=UserLog::select('ip')->distinct()->get();
+        foreach($user_logs as $log)
+            if($log->ip==$ip)
+                $ex=1;
+
+        if(!$ex)
+        {
+            $guest_log= new GuestLog();
+            $guest_log->ip=$ip;
+            $guest_log->save();
+        }
+
+        return view('welcome');
     }
 
 
