@@ -53,6 +53,7 @@
                         <td>{!! Form::select('team1',$teams,['id'=>'team1', 'style'=>'max-width:150px;', 'placeholder'=>'Visiting Team']) !!}</td>
                         <td>@</td>
                         <td>{!! Form::select('team2',$teams,['id'=>'team2', 'style'=>'max-width:150px;', 'placeholder'=>'Home Team']) !!}</td>
+                        <td>{!! Form::select('live',[1=>'live',0=>'replay'],['id'=>'live', 'style'=>'max-width:100px;']) !!}</td>
                         <td>ON</td>
                         <td>{!! Form::select('stream',$range,['style'=>'max-width:150px;', 'placeholder'=>'']) !!}</td>
                         <td>{!! Form::submit('ADD',['style'=>'color:green;']) !!}</td>
@@ -91,6 +92,7 @@
                           <td style="text-align: center;"><img src="/pics/teams/{{ $png1 }}.png"><br>{{ $team1 }}</td>
                           <td style="font-weight: 50; font-size: 25pt;">@</td>
                           <td style="text-align: center;"><img src="/pics/teams/{{ $png2 }}.png"><br>{{ $team2 }}</td>
+                          <td style="text-align: left; color: red;">@if($event->live) LIVE @else REPLAY @endif</td>
                           <td style="text-align: left;">ON</td>
                           <td><a href="/game{{ $event->stream_id }}">Channel#{{ $stream->id }}</a></td>
                       @if(\Auth::user()->admin)

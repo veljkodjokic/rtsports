@@ -120,7 +120,7 @@ td, th {
 	position: relative;
 	float: left;
 	top:25%;
-	height: 50%;
+	height: 75%;
 	width:42%;
 }
 
@@ -161,7 +161,7 @@ td, th {
 	text-align: center;
 	font-size: 16pt;
 	font-weight: 15;
-	height: 50%;
+	height: 33%;
 	width:100%;
 	white-space:nowrap;
 }
@@ -174,8 +174,21 @@ td, th {
 	text-align: center;
 	font-size: 15pt;
 	font-weight: 15;
-	height: 50%;
+	height: 33%;
 	width:100%;
+}
+
+#game-live{
+	font-family: Calibri;
+	display: inline-block;
+	position: relative;
+	float: left;
+	text-align: center;
+	font-size: 15pt;
+	font-weight: 15;
+	height: 33%;
+	width:100%;
+	color:red;
 }
 
 #logo-img{

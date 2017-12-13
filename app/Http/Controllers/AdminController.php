@@ -43,6 +43,7 @@ class AdminController extends Controller
         $event->team1 = $request->team1;
         $event->team2 = $request->team2;
         $event->stream_id = $request->stream;
+        $event->live = $request->live;
         $event->save();
         return \Redirect::back();
     }
