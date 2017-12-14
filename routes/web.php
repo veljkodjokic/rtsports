@@ -58,3 +58,8 @@ Route::middleware(['auth', 'admin'])->group(function () {
 	Route::get('/admin/edit_channels', 'AdminController@getEditChannels')->name('/admin/edit_channels');
 	Route::post('/admin/edit_stream', 'AdminController@postEditStream')->name('/admin/edit_stream');
 });
+
+//Edit account
+Route::post('/edit_email', 'AccountController@postEditEmail')->name('edit_email');
+Route::post('/edit_username', 'AccountController@postEditUsername')->name('edit_username');
+Route::post('/edit_pass', 'AccountController@postEditPass')->name('edit_pass');
