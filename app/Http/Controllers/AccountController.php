@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Validator;
 use Auth;
 use Hash;
 use Session;
+use App\User;
 
 class AccountController extends Controller
 {
@@ -19,16 +20,27 @@ class AccountController extends Controller
     
     public function getAccount()
     {
-    	$user=\Auth::User();
-    	return view('pages.account')->with('user', $user);
+    	return view('pages.account');
+    }
+
+    public function getSettings()
+    {
+    	$user=Auth::User();
+    	return view('pages.account_settings')->with('user', $user);
     }
 
     public function postEditEmail(Request $request)
     {
     	$email=$request->email;
     	$email_ver=$request->email_confirmation;
+    	
     	if($email == $email_ver)
     	{
+    		if(User::where('email',$email)->exists())
+    			{
+    				Session::flash('fail_email');
+    				return \Redirect::back();
+    			}
     		$user=Auth::user();
     		$user->email=$email;
     		$user->save();

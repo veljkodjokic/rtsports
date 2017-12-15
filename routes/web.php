@@ -34,7 +34,8 @@ Route::get('/game{id}', 'StreamController@getStream')->middleware('Paid');
 Route::get('/verify/{id}/{verifyToken}', 'StatusController@sendEmailDone')->name('sendEmailDone');
 
 //Edit account pages
-Route::get('/account', 'AccountController@getAccount')->name('account');
+Route::get('/account', 'AccountController@getAccount')->name('/account');
+Route::get('/account/settings', 'AccountController@getSettings')->name('/account/settings');
 
 //check if auth exp
 Route::post('/check_exp', 'StatusController@checkExp')->name('check_exp');

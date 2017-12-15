@@ -1,49 +1,83 @@
 @extends('layouts.app')
 
 @section('content')
+<style type="text/css">
+    .card-container{
+        width:200px;
+        height:250px;
+        margin-left: 10%;
+        position: relative;
+    }
+
+    .card-text{
+        width:200px;
+        height:50px;
+        position: relative;
+        text-align: center;
+        font-size: 30px;
+        white-space:nowrap;
+    }
+
+    .img-card{
+        width:200px;
+        height:200px;
+    }
+
+    #card{
+        max-height: 200px;
+        max-width:200px;
+    }
+
+    @media only screen and (max-width: 770px) {
+        .card-container{
+            margin: 0 auto;
+        }
+    }
+
+    @media only screen and (min-width: 770px) {
+        .card-container{
+            display: inline-block;
+        }
+    }
+}
+</style>
 <div class="container">
     <div class="row">
-        <div class="col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">My account</div>
-
+                <div class="panel-heading">My Account</div>
                 <div class="panel-body">
 
-                    @if (session('status'))
-                        <div class="alert alert-success">
-                            {{ session('status') }}
+                    <div class="card-container">
+                        <div id="card">
+                            <a href="/account/settings">
+                                <img src="/pics/settings.png" class="img-card">
+                                <div class="card-text"><b>Settings</b></div>
+                            </a>
                         </div>
-                    @endif
-
-                    <div id="text4"">E-mail:{{$user->email}}
-                        {!! Form::open(['url'=>'edit_email',  'method'=>'POST' ,'id'=>'f_1']) !!}
-                        {!! Form::email('email',null,['class' => 'form-control','placeholder'=> 'Enter new email']) !!}
-                        {!! Form::email('email_confirmation',null,['class' => 'form-control','placeholder'=> 'Re-Enter new email']) !!}
-                        {!! Form::submit('Edit', ['class'=>'btn1']) !!}
-                        {!! Form::close() !!}
-                    </div><br>
-                    <div id="text4">Username:{{$user->name}}
-                        {!! Form::open(['url'=>'edit_username',  'method'=>'POST', 'id'=>'f_2']) !!}
-                        {!! Form::text('username',null,['class' => 'form-control','placeholder'=> 'Enter new username']) !!}
-                        {!! Form::text('username_confirmation',null,['class' => 'form-control','placeholder'=> 'Re-Enter new username']) !!}
-                        {!! Form::submit('Edit', ['class'=>'btn1']) !!}
-                        {!! Form::close() !!}
-                    </div><br>
-                    <div id="text4">
-                        Password
-                        {!! Form::open(['url'=>'edit_pass',  'method'=>'POST', 'id'=>'f_3']) !!}
-                        {!! Form::password('old_pass',['class' => 'form-control','placeholder'=> 'Enter current password']) !!}
-                        {!! Form::password('password',['class' => 'form-control','placeholder'=> 'Enter new password']) !!}
-                        {!! Form::password('password_confirmation',['class' => 'form-control','placeholder'=> 'Re-enter new password']) !!}
-                        {!! Form::submit('Edit', ['class'=>'btn1']) !!}
-                        {!! Form::close() !!}
                     </div>
+
+                    <div class="card-container">
+                        <div id="card">
+                            <a href="/account/finances">
+                                <img src="/pics/dollar.png" class="img-card">
+                                <div class="card-text"><b>Finances</b></div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="card-container">
+                        <div id="card">
+                            <a href="/account/delete">
+                                <img src="/pics/trash.png" class="img-card">
+                                <div class="card-text"><b style="font-size: 25px">Delete Account</b></div>
+                            </a>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
-    </div>
 </div>
-
-@include('partials/acc_msgs')
 @include('partials/auth_check')
+
 @endsection

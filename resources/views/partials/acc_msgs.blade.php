@@ -39,3 +39,9 @@
         swal ( "Whoops!" , "The password you entered is incorrect!" ,  "error" )
 </script>
 @endif
+
+@if(Session::has('fail_email'))
+<script type="text/javascript">
+        swal ( "Whoops!" , "The email address you entered is already in use!" ,  "error" )
+</script>
+@endif
