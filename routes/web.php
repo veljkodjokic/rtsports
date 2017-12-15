@@ -36,6 +36,8 @@ Route::get('/verify/{id}/{verifyToken}', 'StatusController@sendEmailDone')->name
 //Edit account pages
 Route::get('/account', 'AccountController@getAccount')->name('/account');
 Route::get('/account/settings', 'AccountController@getSettings')->name('/account/settings');
+Route::get('/account/finances', 'AccountController@getFinances')->name('/account/finances');
+Route::get('/account/delete', 'AccountController@getDelete')->name('/account/delete');
 
 //check if auth exp
 Route::post('/check_exp', 'StatusController@checkExp')->name('check_exp');
@@ -64,3 +66,4 @@ Route::middleware(['auth', 'admin'])->group(function () {
 Route::post('/edit_email', 'AccountController@postEditEmail')->name('edit_email');
 Route::post('/edit_username', 'AccountController@postEditUsername')->name('edit_username');
 Route::post('/edit_pass', 'AccountController@postEditPass')->name('edit_pass');
+Route::post('/delete_acc', 'AccountController@postDeleteAccount')->name('delete_acc');

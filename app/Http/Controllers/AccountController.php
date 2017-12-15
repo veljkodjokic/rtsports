@@ -25,8 +25,50 @@ class AccountController extends Controller
 
     public function getSettings()
     {
-    	$user=Auth::User();
-    	return view('pages.account_settings')->with('user', $user);
+        $user=Auth::User();
+        return view('pages.account_settings')->with('user', $user);
+    }
+
+    public function getFinances()
+    {
+        return view('pages.account_finances');
+    }
+
+    public function getDelete()
+    {
+        return view('pages.account_delete');
+    }
+
+    public function postDeleteAccount(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'email' => 'required|email|max:60',
+            'password' => 'required|min:6',
+        ]);
+
+        if ($validator->fails()) {
+            return \Redirect::back()
+                        ->withErrors($validator);
+        }
+
+        $email=$request->email;
+        $pass=$request->password;
+        if($email == Auth::user()->email)
+        {
+            if (Hash::check($pass, Auth::user()->password))
+            {
+                Auth::user()->delete();
+                return redirect('/');
+            }
+            else{
+                Session::flash('email_pass');
+            return \Redirect::back();
+            }
+        }
+        else{
+            Session::flash('email_err');
+            return \Redirect::back();
+        }
     }
 
     public function postEditEmail(Request $request)
