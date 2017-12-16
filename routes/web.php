@@ -57,7 +57,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
 	Route::post('/admin/search_logsa', 'AdminController@postSearchLogsa')->name('/admin/search_logs');
 	Route::post('/admin/search_logsd', 'AdminController@postSearchLogsd')->name('/admin/search_logs');
 	Route::post('/admin/add_sub', 'AdminController@postAddSub')->name('/admin/add_sub');
-	Route::post('/admin/delete_sub', 'AdminController@postDelSub')->name('/admin/delete_sub');
+	Route::post('/admin/rem_sub', 'AdminController@postDelSub')->name('/admin/rem_sub');
 	Route::get('/admin/edit_channels', 'AdminController@getEditChannels')->name('/admin/edit_channels');
 	Route::post('/admin/edit_stream', 'AdminController@postEditStream')->name('/admin/edit_stream');
 });

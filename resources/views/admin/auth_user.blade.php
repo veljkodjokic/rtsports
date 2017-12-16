@@ -41,7 +41,7 @@
                           <td>{{ $user->name }}</td>
                           <td>{{ $user->email }}</td>
                           <td>@if($user->status) Verified @else Not verified @endif</td>
-                          <td>@if($user->Paid()) <a href="#" onclick="rem_sub({{ $user->email }})" style="color:red;">Paid</a> @else <a href="#" onclick="add_sub('{{ $user->email }}')" @if($user->payment) style="color:orange;" @else style="color:green;" @endif>Not paid </a>@endif</td>
+                          <td>@if($user->Paid()) <a href="#" onclick="rem_sub('{{ $user->email }}')" style="color:red;"> @if($user->getSub()->type == 0) Trial @elseif($user->getSub()->type == 1) Monthly @else Season Pass @endif</a> @else <a href="#" onclick="add_sub('{{ $user->email }}')" @if($user->payment) style="color:orange;" @else style="color:green;" @endif>Not paid </a>@endif</td>
                         </tr>
                       @endforeach
                     </table>

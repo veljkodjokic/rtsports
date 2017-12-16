@@ -120,8 +120,10 @@ class AdminController extends Controller
 
     public function postDelSub(Request $request)
     {
-        $logs=UserLog::orderbyDesc('user')->get();
-        return false;
+        $email=$request->input( '_user' );
+        $user=User::where('email',$email)->first();
+        $sub=$user->getSub();
+        $sub->delete();
     }
 
     public function getEditChannels()

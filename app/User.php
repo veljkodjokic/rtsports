@@ -41,4 +41,13 @@ class User extends Authenticatable
                 return true;
         return false;
     }
+
+    public function getSub()
+    {
+        $subs=$this->subscriptions()->get();
+        foreach($subs as $sub)
+            if($sub->paid_at <= Carbon::now() && Carbon::now() <= $sub->out_at)
+                return $sub;
+        return false;
+    }
 }
