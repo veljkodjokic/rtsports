@@ -7,7 +7,7 @@
                 <div class="panel-heading"><a href="/account">My Account</a> > Finances</div>
                 <div class="panel-body">
 
-                    FINANCES
+                    FINANCES!
 
                 </div>
             </div>
