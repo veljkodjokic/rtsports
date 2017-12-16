@@ -12,6 +12,7 @@
         "laravel/tinker": "~1.0",
         "laravelcollective/html": "^5.5",
         "nesbot/carbon": "^1.22",
+        "paypal/rest-api-sdk-php": "^1.13",
         "uxweb/sweet-alert": "^1.4"
     },
     "require-dev": {
