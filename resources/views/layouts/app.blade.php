@@ -67,6 +67,8 @@
 
                             <li><a href="/channels">Channels</a></li>
 
+                            <li><a href="/news">News</a></li>
+
                             <li><a href="/schedule">Schedule</a></li>
 
                             <li><a href="/contact">Contact us</a></li>

@@ -55,4 +55,14 @@ class HomeController extends Controller
         $subs=Subscription::where('user_id',\Auth::id())->where('out_at','>',Carbon::now())->get();
         return view('pages.subs')->with(['subs'=>$subs, 'arch'=>$arch]);
     }
+
+    public function getNews()
+    {
+        $feed = new \SimplePie();
+        $feed->set_feed_url('http://www.nba.com/rss/nba_rss.xml');
+        $feed->set_cache_location('C:\xampp');
+        $feed->init();
+        $feed->handle_content_type();
+        return view('pages.news')->with('feed',$feed);
+    }
 }
