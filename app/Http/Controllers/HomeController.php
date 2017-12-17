@@ -60,7 +60,7 @@ class HomeController extends Controller
     {
         $feed = new \SimplePie();
         $feed->set_feed_url('http://www.nba.com/rss/nba_rss.xml');
-        $feed->set_cache_location('C:\xampp');
+        $feed->set_cache_location('/var/www/html/rtsports/bootstrap/cache'); //C:\xampp
         $feed->init();
         $feed->handle_content_type();
         return view('pages.news')->with('feed',$feed);
