@@ -49,10 +49,10 @@
                         </div>
                     </div></td>
 
-                        <td style="font-size: 20pt; text-align: center;"><b><a href="https://www.paypal.me/MarkoLipozencic/9.99">Monthly Subscription $9.99/m</a></b></td>
+                        <td style="font-size: 20pt; text-align: center;"><b><a href="https://www.paypal.me/RTSports/9.99">Monthly Subscription $9.99/m</a></b></td>
                       </tr>
                       <tr>
-                      	<td style="font-size: 20pt; text-align: center;"><b><a href="https://www.paypal.me/MarkoLipozencic/29.99">Season Pass $29.99</a></b></td>
+                      	<td style="font-size: 20pt; text-align: center;"><b><a href="https://www.paypal.me/RTSports/29.99">Season Pass $29.99</a></b></td>
                       </tr>
                 	</table>
                     
