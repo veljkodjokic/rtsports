@@ -60,24 +60,28 @@ class HomeController extends Controller
     {
         $feed = new \SimplePie();
         $feed->set_feed_url('http://www.nba.com/rss/nba_rss.xml');
-        $feed->set_cache_location('/var/www/html/rtsports/bootstrap/cache'); //C:\xampp
+        $feed->enable_cache(false);
         $feed->init();
         $feed->handle_content_type();
-        return view('pages.news')->with('feed',$feed);
+
+        $feed1 = new \SimplePie();
+        $feed1->set_feed_url('http://rss.cbssports.com/rss/headlines/nba');
+        $feed1->enable_cache(false);
+        $feed1->init();
+        $feed1->handle_content_type();
+
+        $feed1=$feed1->get_items();
+
+        return view('pages.news')->with(['feed'=>$feed, 'feed1'=>$feed1]);
     }
 
     public function getInjuries()
     {
-        $title = '';
-        $dom = new \DOMDocument();
-        if (@$dom->loadHTMLFile('https://www.cbssports.com/nba/injuries'))
-        {
-          $elements = $dom->getElementsByTagName('td');
-          if ($elements->length > 0)
-          {
-            for($i=0; $i<$elements->length; $i++)
-                echo $elements->item($i)->nodeValue . "<br>";
-          }
-        }
+        $feed = new \SimplePie();
+        $feed->set_feed_url('http://www.rotoworld.com/rss/feed.aspx?sport=nba&ftype=news&count=12&format=rss');
+        $feed->enable_cache(false);
+        $feed->init();
+        $feed->handle_content_type();
+        return view('pages.injuries')->with('feed',$feed);
     }
 }

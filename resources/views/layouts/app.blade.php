@@ -69,7 +69,7 @@
 
                             <li><a href="/news">News</a></li>
 
-                            <li><a href="/injuries">Injuries</a></li>
+                            <li><a href="/reports">Player Reports</a></li>
 
                             <li><a href="/schedule">Schedule</a></li>
 
