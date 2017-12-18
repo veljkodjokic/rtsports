@@ -70,9 +70,16 @@ class HomeController extends Controller
         $feed1->init();
         $feed1->handle_content_type();
 
-        $feed1=$feed1->get_items();
+        $feed2 = new \SimplePie();
+        $feed2->set_feed_url('https://www.youtube.com/feeds/videos.xml?channel_id=UCoh_z6QB0AGB1oxWufvbDUg');
+        $feed2->enable_cache(false);
+        $feed2->init();
+        $feed2->handle_content_type();
 
-        return view('pages.news')->with(['feed'=>$feed, 'feed1'=>$feed1]);
+        $feed1=$feed1->get_items();
+        $feed2=$feed2->get_items();
+
+        return view('pages.news')->with(['feed'=>$feed, 'feed1'=>$feed1, 'feed2'=>$feed2]);
     }
 
     public function getInjuries()

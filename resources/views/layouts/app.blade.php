@@ -61,8 +61,23 @@
                             <li><a href="{{ route('register') }}">Register</a></li>
                         @else
                             @if(\Auth::user()->admin)
-                                <li><a href="/admin/auth_users" style="color: lime;">Auth Users</a></li>
-                                <li><a href="/admin/log_users" style="color: lime;">User logs</a></li>
+                                <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" style="color: lime" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
+                                    ADMIN <span class="caret"></span>
+                                </a>
+
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a href="/admin/auth_users">
+                                            Auth Users
+                                        </a>
+
+                                        <a href="/admin/log_users">
+                                            User logs
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
                             @endif
 
                             <li><a href="/channels">Channels</a></li>
