@@ -69,6 +69,8 @@
 
                             <li><a href="/news">News</a></li>
 
+                            <li><a href="/injuries">Injuries</a></li>
+
                             <li><a href="/schedule">Schedule</a></li>
 
                             <li><a href="/contact">Contact us</a></li>

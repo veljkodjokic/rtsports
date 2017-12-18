@@ -65,4 +65,19 @@ class HomeController extends Controller
         $feed->handle_content_type();
         return view('pages.news')->with('feed',$feed);
     }
+
+    public function getInjuries()
+    {
+        $title = '';
+        $dom = new \DOMDocument();
+        if (@$dom->loadHTMLFile('https://www.cbssports.com/nba/injuries'))
+        {
+          $elements = $dom->getElementsByTagName('td');
+          if ($elements->length > 0)
+          {
+            for($i=0; $i<$elements->length; $i++)
+                echo $elements->item($i)->nodeValue . "<br>";
+          }
+        }
+    }
 }

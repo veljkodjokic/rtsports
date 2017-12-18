@@ -25,6 +25,7 @@ Route::get('/channels', 'HomeController@index')->name('channels');
 Route::get('/schedule', 'HomeController@getSchedule')->name('schedule');
 Route::get('/subscriptions', 'HomeController@getSubs')->name('subscriptions');
 Route::get('/news', 'HomeController@getNews')->name('news');
+Route::get('/injuries', 'HomeController@getInjuries')->name('injuries');
 
 Route::get('/contact', 'ContactController@getContact')->name('contact');
 Route::post('/contact', 'ContactController@sendContact')->name('contact');
