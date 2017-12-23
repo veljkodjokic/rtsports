@@ -23,13 +23,6 @@
                         <a href="{{ $feed1[$i]->get_permalink() }}"><b style="font-size: 15pt;">{{ $feed1[$i]->get_title() }}</b></a><br>
                         {{ $feed1[$i]->get_description() }}<br>
                         {{ $feed1[$i]->get_date() }}<br><br>
-
-                    @if($i < 15)
-                        <a href="{{ $feed2[$i]->get_permalink() }}"><b style="font-size: 15pt;">{{ $feed2[$i]->get_title() }}</b></a>
-                        <i class="fa fa-youtube-play" style="font-size:30px;color:red"></i><br>
-                        {{ $feed2[$i]->get_date() }}<br><br>
-                    @endif
-
                     @endfor
                 </div>
             </div>

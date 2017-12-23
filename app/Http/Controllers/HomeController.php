@@ -70,16 +70,29 @@ class HomeController extends Controller
         $feed1->init();
         $feed1->handle_content_type();
 
-        $feed2 = new \SimplePie();
-        $feed2->set_feed_url('https://www.youtube.com/feeds/videos.xml?channel_id=UCoh_z6QB0AGB1oxWufvbDUg');
-        $feed2->enable_cache(false);
-        $feed2->init();
-        $feed2->handle_content_type();
-
         $feed1=$feed1->get_items();
-        $feed2=$feed2->get_items();
 
-        return view('pages.news')->with(['feed'=>$feed, 'feed1'=>$feed1, 'feed2'=>$feed2]);
+        return view('pages.news')->with(['feed'=>$feed, 'feed1'=>$feed1]);
+    }
+
+    public function getHighlights()
+    {
+        $feed = new \SimplePie();
+        $feed->set_feed_url('https://www.youtube.com/feeds/videos.xml?channel_id=UCoh_z6QB0AGB1oxWufvbDUg');
+        $feed->enable_cache(false);
+        $feed->init();
+        $feed->handle_content_type();
+
+        $feed1 = new \SimplePie();
+        $feed1->set_feed_url('https://www.youtube.com/feeds/videos.xml?channel_id=UCEjOSbbaOfgnfRODEEMYlCw');
+        $feed1->enable_cache(false);
+        $feed1->init();
+        $feed1->handle_content_type();
+
+        $feed=$feed->get_items();
+        $feed1=$feed1->get_items();
+
+        return view('pages.highlights')->with(['feed'=>$feed, 'feed1'=>$feed1]);
     }
 
     public function getInjuries()
@@ -89,6 +102,7 @@ class HomeController extends Controller
         $feed->enable_cache(false);
         $feed->init();
         $feed->handle_content_type();
+
         return view('pages.injuries')->with('feed',$feed);
     }
 }
