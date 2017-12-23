@@ -27,6 +27,7 @@ Route::get('/subscriptions', 'HomeController@getSubs')->name('subscriptions');
 Route::get('/news', 'HomeController@getNews')->name('news');
 Route::get('/reports', 'HomeController@getInjuries')->name('reports');
 Route::get('/highlights', 'HomeController@getHighlights')->name('highlights');
+Route::get('/highlights/{url}', 'HomeController@getVideo');
 
 Route::get('/contact', 'ContactController@getContact')->name('contact');
 Route::post('/contact', 'ContactController@sendContact')->name('contact');

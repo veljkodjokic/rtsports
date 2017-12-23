@@ -95,6 +95,13 @@ class HomeController extends Controller
         return view('pages.highlights')->with(['feed'=>$feed, 'feed1'=>$feed1]);
     }
 
+    public function getVideo($url)
+    {
+        $video="https://www.youtube.com/embed/".$url;
+
+        return view('pages.highlight')->with('video',$video);
+    }
+
     public function getInjuries()
     {
         $feed = new \SimplePie();
