@@ -48,9 +48,9 @@ Route::get('/account/delete', 'AccountController@getDelete')->name('/account/del
 Route::post('/check_exp', 'StatusController@checkExp')->name('check_exp');
 
 //TV Show routes
-Route::get('/shows', 'ShowController@index')->name('shows');
-Route::get('/shows/{id}', 'ShowController@getShow');
-Route::get('/shows/{id}/{ep}', 'ShowController@getEpisode');
+//Route::get('/shows', 'ShowController@index')->name('shows');
+//Route::get('/shows/{id}', 'ShowController@getShow');
+//Route::get('/shows/{id}/{ep}', 'ShowController@getEpisode');
 
 //ADMIN PANEL!
 Route::middleware(['auth', 'admin'])->group(function () {
