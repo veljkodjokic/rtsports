@@ -102,6 +102,41 @@ class HomeController extends Controller
         return view('pages.highlight')->with('video',$video);
     }
 
+    public function postSearchVideos()
+    {
+        $feed = new \SimplePie();
+        $feed->set_feed_url('https://www.youtube.com/feeds/videos.xml?channel_id=UCoh_z6QB0AGB1oxWufvbDUg');
+        $feed->enable_cache(false);
+        $feed->init();
+        $feed->handle_content_type();
+
+        $feed1 = new \SimplePie();
+        $feed1->set_feed_url('https://www.youtube.com/feeds/videos.xml?channel_id=UCEjOSbbaOfgnfRODEEMYlCw');
+        $feed1->enable_cache(false);
+        $feed1->init();
+        $feed1->handle_content_type();
+
+        $feed=$feed->get_items();
+        $feed1=$feed1->get_items();
+        $feeds=array_merge($feed,$feed1);
+
+        $searchVideos=[];
+        $keywords = \Request::input('keywords');
+
+        if(!$keywords){
+            $searchVideos=$feeds;
+            return \View::make('pages.searchedVideos')->with('searchVideos',$searchVideos);
+        }
+
+        foreach ($feeds as $feed) {
+            $title=strtolower($feed->get_title());
+            if(str_contains($title, $keywords))
+                array_push($searchVideos , $feed);
+        }
+
+        return \View::make('pages.searchedVideos')->with('searchVideos',$searchVideos);
+    }
+
     public function getInjuries()
     {
         $feed = new \SimplePie();

@@ -5,7 +5,7 @@
 <div class="container">
     <div class="row">
             <div class="panel panel-default">
-                <div class="panel-heading">Videos & Highlights</div>
+                <div class="panel-heading">Videos & Highlights  {!! Form::text('requirement',null,['class' => 'form-control','placeholder'=> 'Search videos','id'=>'search_bar','onkeydown'=>'down()','onkeyup'=>'up()','style'=>'width:30%; float:right; margin-top:-7px;']) !!}</div>
                 <div class="panel-body" style="height:90%;">
                     @for($i = 0; $i < 15; $i++)
 
@@ -25,6 +25,25 @@
             </div>
         </div>
 </div>
+
+<script>
+        var timer;
+        function up()
+        {
+            timer = setTimeout(function()
+            {
+                var keywords = $('#search_bar').val();
+                    $.post('/search_videos', {keywords: keywords}, function(markup)
+                    {
+                        $('.panel-body').html(markup);
+                    });
+            }, 500);
+        }
+        function down()
+        {
+            clearTimeout(timer);
+        }
+    </script>
 @include('partials/auth_check')
 
 @endsection
