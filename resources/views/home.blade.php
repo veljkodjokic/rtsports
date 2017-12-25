@@ -41,7 +41,7 @@
 <div class="container">
     <div class="row">
             <div class="panel panel-default">
-                <div class="panel-heading">Channels @if(\Auth::user()->admin)<a href="/admin/edit_channels" style="float: right; color: green;">EDIT</a>@endif</div>
+                <div class="panel-heading">Channels CAO ANDREJ @if(\Auth::user()->admin)<a href="/admin/edit_channels" style="float: right; color: green;">EDIT</a>@endif</div>
 
                 <div class="panel-body" style="height:90%;">
                     @if (session('status'))
