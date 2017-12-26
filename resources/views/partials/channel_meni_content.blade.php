@@ -37,8 +37,9 @@
                     <div id="team-name">{{ $name1 }}</div>
                 </div>
                 <div id="game-info">
-                    <div id="game-time" @if($stream->Live()) style="font-color: red;" @endif>{{ $time }}<raw style="font-size: 15pt; font-weight: 15;"> UTC +1</raw></div>
-                    <div id="game-date" @if($stream->Live()) style="font-color: red;" @endif>{{ $day }}</div>
+                    <div id="game-time" @if($stream->Live()) style="color: red;" @endif>{{ $time }}<raw style="font-size: 15pt; font-weight: 15;"> UTC +1</raw></div>
+                    <div id="game-date" @if($stream->Live()) style="color: red;" @endif>{{ $day }}</div>
+                    <div id="game-live"> @if(!$event->live) REPLAY @endif</div>
                 </div>
                 <div id="team-rigth">
                     <div id="team-logo" style="margin-bottom: 15px;"><img src="/pics/teams/{{ $event['team2'] }}.png" style="max-width:100%;
@@ -51,6 +52,14 @@
     @endif
 
 @endforeach
+
+@if($stream->id!=4)
+    <div id="kvadrat" style="margin: 0 auto;  width: 100%; max-width: 800px; height: 160px; margin-bottom: -20px;">
+        <a href="/game4">
+            <img src="/pics/ufcpass.png" style="width: 100%; height: 100%;">
+        </a>
+    </div> 
+@endif
 
 @if($stream->id!=8)
     <div id="kvadrat" style="margin: 0 auto;  width: 100%; max-width: 800px; height: 160px; margin-bottom: -20px;">
