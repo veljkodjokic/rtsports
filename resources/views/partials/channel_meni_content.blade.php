@@ -5,6 +5,19 @@
     }
 }
 
+    #game-live{
+    font-family: Calibri;
+    display: inline-block;
+    position: relative;
+    float: left;
+    text-align: center;
+    font-size: 15pt;
+    font-weight: 15;
+    height: 33%;
+    width:100%;
+    color:red;
+}
+
 #live_stream {
     position: absolute;
     right: 15px;
