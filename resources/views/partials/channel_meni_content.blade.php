@@ -68,7 +68,7 @@
 
 @if($stream->id!=4)
     <div id="kvadrat" style="margin: 0 auto;  width: 100%; max-width: 800px; height: 160px; margin-bottom: -20px;">
-        <a href="/game4">
+        <a href="/game12">
             <img src="/pics/ufcpass.png" style="width: 100%; height: 100%;">
         </a>
     </div> 
