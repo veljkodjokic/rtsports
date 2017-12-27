@@ -48,6 +48,17 @@ class AdminController extends Controller
         return \Redirect::back();
     }
 
+    public function postAddStream(Request $request)
+    {
+        $stream = new Stream;
+        $stream->source=$request->source;
+        $stream->running=0;
+        $stream->save();
+
+        \Session::flash('add_src');
+        return \Redirect::back();
+    }
+
     public function postDelEvent(Request $request)
     {
         $id=$request->id;

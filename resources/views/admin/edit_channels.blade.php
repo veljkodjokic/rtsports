@@ -54,7 +54,15 @@
                         <td>{!! Form::submit('Update',['style'=>'color:green;']) !!}</td>
                       </tr>
                       {!! Form::close() !!}
+                      @php $zid=$stream->id; @endphp
                       @endforeach
+                      <tr>
+                        {!! Form::open(['url'=>'/admin/add_stream', 'method'=>'POST']) !!}
+                        <td>{{ $zid+1 }}</td>
+                        <td>{!! Form::text('source',' ',['id'=>'source','style'=>'width:90%', 'placeholder'=>'Stream Source']) !!}</td>
+                        <td>{!! Form::submit('Add',['style'=>'color:green;']) !!}</td>
+                        {!! Form::close() !!}
+                      </tr>
                     </table>
                 </div>
             </div>
@@ -64,6 +72,12 @@
 @if(Session::has('succs'))
 <script type="text/javascript">
         swal ( " " ,  "Source updated successfully" ,  "success" )
+</script>
+@endif
+
+@if(Session::has('add_src'))
+<script type="text/javascript">
+        swal ( " " ,  "Stream added successfully" ,  "success" )
 </script>
 @endif
 

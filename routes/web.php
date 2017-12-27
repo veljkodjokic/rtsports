@@ -65,6 +65,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
 	Route::post('/admin/rem_sub', 'AdminController@postDelSub')->name('/admin/rem_sub');
 	Route::get('/admin/edit_channels', 'AdminController@getEditChannels')->name('/admin/edit_channels');
 	Route::post('/admin/edit_stream', 'AdminController@postEditStream')->name('/admin/edit_stream');
+	Route::post('/admin/add_stream', 'AdminController@postAddStream')->name('/admin/add_stream');
 });
 
 //Edit account
