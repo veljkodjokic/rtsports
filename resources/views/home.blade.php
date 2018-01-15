@@ -43,7 +43,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Channels @if(\Auth::user()->admin)<a href="/admin/edit_channels" style="float: right; color: green;">EDIT</a>@endif</div>
 
-                <div class="panel-body" style="height:90%;">
+                <div class="panel-body" style="height:90%; background-color:#F0F0F0;">
                     @if (session('status'))
                         <div class="alert alert-success">
                             {{ session('status') }}
