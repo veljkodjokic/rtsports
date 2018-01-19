@@ -12,7 +12,7 @@
                         $feed=$feed->get_items(); 
                     @endphp
 
-                    @for($i = 0; $i < 30; $i++)
+                    @for($i = 0; $i < 20; $i++)
 
                     @if($i < 10)
                         <a href="{{ $feed[$i]->get_permalink() }}"><b style="font-size: 15pt;">{{ $feed[$i]->get_title() }}</b></a><br>
