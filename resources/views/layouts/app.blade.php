@@ -92,7 +92,7 @@
 
                             <li><a href="/contact">Contact us</a></li>
 
-                            <li><a href="/about">About us</a></li>
+                            <li><a href="/FAQ">FAQ</a></li>
 
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">

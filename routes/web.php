@@ -32,7 +32,7 @@ Route::post('/search_videos', 'HomeController@postSearchVideos');
 
 Route::get('/contact', 'ContactController@getContact')->name('contact');
 Route::post('/contact', 'ContactController@sendContact')->name('contact');
-Route::get('/about', 'ContactController@getAbout')->name('about');
+Route::get('/FAQ', 'ContactController@getAbout')->name('FAQ');
 
 Route::get('/game{id}', 'StreamController@getStream')->middleware('Paid');
 
