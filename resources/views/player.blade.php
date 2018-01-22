@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-
+<script src="https://cdn.jsdelivr.net/npm/hls.js"></script>
 <div class="side_players_left">@include('partials.channel_meni_content')</div>
 </div>
 <div class="container">
@@ -27,9 +27,7 @@
                         </div>
                     @endif
 
-                    <video id="video" width="100%" height="50%" style="margin:0 auto;" controls preload="none">
-                        <source src="{{ $stream->source }}" type="application/x-mpegURL">
-                    </video>
+                    <video id="video" width="100%" height="50%" style="margin:0 auto;" controls preload="none"></video>
                 </div>
             </div>
         </div>
@@ -37,7 +35,6 @@
 </div>
 <div class="side_players_bottom">@include('partials.channel_meni_content')</div>
 
-<script src="https://cdn.jsdelivr.net/npm/hls.js"></script>
 <script>
   if(Hls.isSupported()) {
     var video = document.getElementById('video');
@@ -48,6 +45,25 @@
       video.play();
   });
  }
+</script>
+
+<script>
+  if(Hls.isSupported()) {
+    var video = document.getElementById('video');
+    var hls = new Hls();
+    hls.loadSource('{{ $stream->source }}');
+    hls.attachMedia(video);
+    hls.on(Hls.Events.MANIFEST_PARSED,function() {
+      video.play();
+  });
+ }
+
+else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+  video.src = '{{ $stream->source }}';
+  video.addEventListener('canplay',function() {
+    video.play();
+  });
+}
 </script>
 
 @if(Session::has('trl'))
