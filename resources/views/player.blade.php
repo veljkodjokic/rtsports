@@ -27,29 +27,17 @@
                         </div>
                     @endif
 
-                    <video id="video" width="100%" height="50%" style="margin:0 auto;" controls preload="none"></video>
+                    <video id="video" width="100%" height="50%" style="margin:0 auto;" controls preload="none" src="{{ $stream->source }}"></video>
                 </div>
             </div>
         </div>
     </div>
 </div>
 <div class="side_players_bottom">@include('partials.channel_meni_content')</div>
-
 <script>
   if(Hls.isSupported()) {
     var video = document.getElementById('video');
-    var hls = new Hls();
-    hls.loadSource('{{ $stream->source }}');
-    hls.attachMedia(video);
-    hls.on(Hls.Events.MANIFEST_PARSED,function() {
-      video.play();
-  });
- }
-</script>
-
-<script>
-  if(Hls.isSupported()) {
-    var video = document.getElementById('video');
+    video.src = '';
     var hls = new Hls();
     hls.loadSource('{{ $stream->source }}');
     hls.attachMedia(video);
@@ -59,8 +47,7 @@
  }
 
 else if (video.canPlayType('application/vnd.apple.mpegurl')) {
-  video.src = '{{ $stream->source }}';
-  video.addEventListener('canplay',function() {
+    video.addEventListener('canplay',function() {
     video.play();
   });
 }
