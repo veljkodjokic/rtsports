@@ -47,12 +47,34 @@
                     <table style="border-collapse: collapse; width: 100%; ">
                       @if(\Auth::user()->admin)
                       {!! Form::open(['url'=>'/admin/add_event', 'method'=>'POST']) !!}
+                      {!! Form::hidden('sport','nba') !!}
+                      <tr>
+                        <th>NBA</th>
+                      </tr>
                       <tr>
                         <td>{!! Form::text('day','',['id'=>'day', 'style'=>'max-width:150px;', 'placeholder'=>'Date']) !!}</td>
                         <td>{!! Form::text('time','',['id'=>'hour', 'style'=>'max-width:150px;', 'placeholder'=>'Time']) !!}</td>
                         <td>{!! Form::select('team1',$teams,['id'=>'team1', 'style'=>'max-width:150px;', 'placeholder'=>'Visiting Team']) !!}</td>
                         <td>@</td>
                         <td>{!! Form::select('team2',$teams,['id'=>'team2', 'style'=>'max-width:150px;', 'placeholder'=>'Home Team']) !!}</td>
+                        <td>{!! Form::select('live',[1=>'live',0=>'replay'],['id'=>'live', 'style'=>'max-width:100px;']) !!}</td>
+                        <td>ON</td>
+                        <td>{!! Form::select('stream',$range,['style'=>'max-width:150px;', 'placeholder'=>'']) !!}</td>
+                        <td>{!! Form::submit('ADD',['style'=>'color:green;']) !!}</td>
+                      </tr>
+                      {!! Form::close() !!}
+
+                      {!! Form::open(['url'=>'/admin/add_event', 'method'=>'POST']) !!}
+                      {!! Form::hidden('sport','nhl') !!}
+                      <tr>
+                        <th>NHL</th>
+                      </tr>
+                      <tr>
+                        <td>{!! Form::text('day','',['id'=>'day1', 'style'=>'max-width:150px;', 'placeholder'=>'Date']) !!}</td>
+                        <td>{!! Form::text('time','',['id'=>'hour', 'style'=>'max-width:150px;', 'placeholder'=>'Time']) !!}</td>
+                        <td>{!! Form::select('team1',$teams1,['id'=>'team1', 'style'=>'max-width:150px;', 'placeholder'=>'Visiting Team']) !!}</td>
+                        <td>@</td>
+                        <td>{!! Form::select('team2',$teams1,['id'=>'team2', 'style'=>'max-width:150px;', 'placeholder'=>'Home Team']) !!}</td>
                         <td>{!! Form::select('live',[1=>'live',0=>'replay'],['id'=>'live', 'style'=>'max-width:100px;']) !!}</td>
                         <td>ON</td>
                         <td>{!! Form::select('stream',$range,['style'=>'max-width:150px;', 'placeholder'=>'']) !!}</td>
@@ -82,6 +104,8 @@
                       $team1=App\Team::where('team',$event->team1)->get()[0]['name'];
                       $team2=App\Team::where('team',$event->team2)->get()[0]['name'];
 
+                      $sport=App\Team::where('team',$event->team1)->get()[0]['sport'];
+
                       $png1=App\Team::where('team',$event->team1)->get()[0]['team'];
                       $png2=App\Team::where('team',$event->team2)->get()[0]['team'];
                       @endphp
@@ -89,9 +113,9 @@
                         <tr>
                           <td>{{ $weekday }} {{ $date }}</td>
                           <td>{{ $hour }}</td>
-                          <td style="text-align: center;"><img src="/pics/teams/{{ $png1 }}.png"><br>{{ $team1 }}</td>
+                          <td style="text-align: center;"><img @if($sport == 'nhl') src="/pics/nhl_teams/{{ $png1 }}.png" @else src="/pics/teams/{{ $png1 }}.png" @endif><br>{{ $team1 }}</td>
                           <td style="font-weight: 50; font-size: 25pt;">@</td>
-                          <td style="text-align: center;"><img src="/pics/teams/{{ $png2 }}.png"><br>{{ $team2 }}</td>
+                          <td style="text-align: center;"><img @if($sport == 'nhl') src="/pics/nhl_teams/{{ $png2 }}.png" @else src="/pics/teams/{{ $png2 }}.png" @endif><br>{{ $team2 }}</td>
                           <td style="text-align: left; color: red;">@if($event->live) LIVE @else REPLAY @endif</td>
                           <td style="text-align: left;">ON</td>
                           <td><a href="/game{{ $event->stream_id }}">Channel#{{ $stream->id }}</a></td>
@@ -115,6 +139,15 @@
 <script type="text/javascript">
   $(function() {
     $( "#day" ).datepicker({
+      changeMonth: true,
+      changeYear: true,
+      format: 'yyyy-m-d'
+    });
+  });
+</script>
+<script type="text/javascript">
+  $(function() {
+    $( "#day1" ).datepicker({
       changeMonth: true,
       changeYear: true,
       format: 'yyyy-m-d'

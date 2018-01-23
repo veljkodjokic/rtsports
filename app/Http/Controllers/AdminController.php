@@ -44,6 +44,8 @@ class AdminController extends Controller
         $event->team2 = $request->team2;
         $event->stream_id = $request->stream;
         $event->live = $request->live;
+        if($request->sport == 'nhl')
+            $event->sport='nhl';
         $event->save();
         return \Redirect::back();
     }

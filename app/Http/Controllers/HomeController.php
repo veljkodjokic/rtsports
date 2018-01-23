@@ -42,11 +42,16 @@ class HomeController extends Controller
         unset($range[0]);
 
         $teams_array = array();
-        $teams=Team::all();
-        foreach($teams as $team)
+        $teams_nba=Team::where('sport','nba')->get();
+        foreach($teams_nba as $team)
             $teams_array[$team->team] = $team->name;
 
-        return view('pages.schedule')->with(['events'=>$events,'range'=>$range, 'teams'=>$teams_array]);
+        $teams1_array = array();
+        $teams_nhl =Team::where('sport','nhl')->get();
+        foreach($teams_nhl as $team)
+            $teams1_array[$team->team] = $team->name;
+
+        return view('pages.schedule')->with(['events'=>$events,'range'=>$range, 'teams'=>$teams_array, 'teams1'=>$teams1_array]);
     }
 
     public function getSubs()

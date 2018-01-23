@@ -87,7 +87,7 @@
                         <div id="kvadrat" @if($stream->Live()) style="font-color: red;" @endif>
                             <a id="game-link" href="/game{{$stream->id}}">
                                 <div id="team-left">
-                                    <div id="team-logo"><img src="/pics/teams/{{ $event['team1'] }}.png" style="max-width:90%;
+                                    <div id="team-logo"><img @if($event['sport'] == 'nhl') src="/pics/nhl_teams/{{ $event['team1'] }}.png" @else src="/pics/teams/{{ $event['team1'] }}.png" @endif style="max-width:90%;
   max-height:90%;" id="logo-img"></div>
                                     <div id="team-name">{{ $name1 }}</div>
                                 </div>
@@ -97,7 +97,7 @@
                                     <div id="game-live"> @if(!$event->live) REPLAY @endif</div>
                                 </div>
                                 <div id="team-rigth">
-                                    <div id="team-logo"><img src="/pics/teams/{{ $event['team2'] }}.png" style="max-width:90%;
+                                    <div id="team-logo"><img @if($event['sport'] == 'nhl') src="/pics/nhl_teams/{{ $event['team2'] }}.png" @else src="/pics/teams/{{ $event['team2'] }}.png" @endif style="max-width:90%;
   max-height:90%;" id="logo-img"></div>
                                     <div id="team-name">{{ $name2 }}</div>
                                 </div>
