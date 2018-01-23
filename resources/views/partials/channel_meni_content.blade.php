@@ -45,7 +45,7 @@
         <div id="kvadrat" style="margin: 0 auto;  width: 100%; max-width: 800px; height: 160px; margin-bottom: -20px;">
             <a id="game-link" href="/game{{$theStream->id}}">
                 <div id="team-left">
-                    <div id="team-logo" style="margin-bottom: 15px;"><img src="/pics/teams/{{ $event['team1'] }}.png" style="max-width:100%;
+                    <div id="team-logo" style="margin-bottom: 15px;"><img @if($event['sport'] == 'nhl') src="/pics/nhl_teams/{{ $event['team1'] }}.png" @else src="/pics/teams/{{ $event['team1'] }}.png" @endif style="max-width:100%;
   max-height:100%;" id="logo-img"></div>
                     <div id="team-name">{{ $name1 }}</div>
                 </div>
@@ -55,7 +55,7 @@
                     <div id="game-live"> @if(!$event->live) REPLAY @endif</div>
                 </div>
                 <div id="team-rigth">
-                    <div id="team-logo" style="margin-bottom: 15px;"><img src="/pics/teams/{{ $event['team2'] }}.png" style="max-width:100%;
+                    <div id="team-logo" style="margin-bottom: 15px;"><img @if($event['sport'] == 'nhl') src="/pics/nhl_teams/{{ $event['team2'] }}.png" @else src="/pics/teams/{{ $event['team2'] }}.png" @endif style="max-width:100%;
   max-height:100%;" id="logo-img"></div>
                     <div id="team-name">{{ $name2 }}</div>
                 </div>
