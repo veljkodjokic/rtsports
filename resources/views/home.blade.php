@@ -5,14 +5,14 @@
     @media only screen and (max-width: 770px) {
         #kvadrat{
             margin: 0 auto;
-            width: 80%; 
+            width: 80%;
         }
     }
 
     @media only screen and (min-width: 770px) {
         #kvadrat{
             display: inline-block;
-            width:49%; 
+            width:49%;  
         }
     }
 
@@ -50,13 +50,13 @@
                         </div>
                     @endif
 
-                    <div id="kvadrat" style="vertical-align: top">
+                    <div id="kvadrat" style="vertical-align: top; margin-bottom: 7px;">
                         <a href="/game12">
                             <img src="/pics/ufcpass.png" style="width: 100%; height: 100%;">
                         </a>
                     </div>
 
-                    <div id="kvadrat" style="vertical-align: top">
+                    <div id="kvadrat" style="vertical-align: top; margin-bottom: 7px;">
                         <a href="/game8">
                             <img src="/pics/nbatv.png" style="width: 100%; height: 100%;">
                         </a>
