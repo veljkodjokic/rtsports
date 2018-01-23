@@ -66,7 +66,7 @@
 
 @endforeach
 
-@if($stream->id!=4)
+@if($stream->id!=12)
     <div id="kvadrat" style="margin: 0 auto;  width: 100%; max-width: 800px; height: 160px; margin-bottom: -20px;">
         <a href="/game12">
             <img src="/pics/ufcpass.png" style="width: 100%; height: 100%;">
@@ -78,6 +78,14 @@
     <div id="kvadrat" style="margin: 0 auto;  width: 100%; max-width: 800px; height: 160px; margin-bottom: -20px;">
         <a href="/game8">
             <img src="/pics/nbatv.png" style="width: 100%; height: 100%;">
+        </a>
+    </div> 
+@endif
+
+@if($stream->id!=4)
+    <div id="kvadrat" style="margin: 0 auto;  width: 100%; max-width: 800px; height: 160px; margin-bottom: -20px;">
+        <a href="/game4">
+            <img src="/pics/nhltv.png" style="width: 100%; height: 100%;">
         </a>
     </div> 
 @endif

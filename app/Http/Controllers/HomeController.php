@@ -64,15 +64,7 @@ class HomeController extends Controller
         $feed->init();
         $feed->handle_content_type();
 
-        $feed1 = new \SimplePie();
-        $feed1->set_feed_url('http://rss.cbssports.com/rss/headlines/nba');
-        $feed1->enable_cache(false);
-        $feed1->init();
-        $feed1->handle_content_type();
-
-        $feed1=$feed1->get_items();
-
-        return view('pages.news')->with(['feed'=>$feed, 'feed1'=>$feed1]);
+        return view('pages.news')->with('feed', $feed);
     }
 
     public function getHighlights()

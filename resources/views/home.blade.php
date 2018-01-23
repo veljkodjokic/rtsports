@@ -62,6 +62,12 @@
                         </a>
                     </div>
 
+                    <div id="kvadrat" style="vertical-align: top">
+                        <a href="/game4">
+                            <img src="/pics/nhltv.png" style="width: 100%; height: 100%;">
+                        </a>
+                    </div>
+
                     @foreach($streams as $stream)
 
                     @if($stream->upNext())

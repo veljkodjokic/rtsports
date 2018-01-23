@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<script src="https://cdn.jsdelivr.net/npm/hls.js"></script>
+
 <div class="side_players_left">@include('partials.channel_meni_content')</div>
 </div>
 <div class="container">
@@ -45,7 +45,6 @@
       video.play();
   });
  }
-
 else if (video.canPlayType('application/vnd.apple.mpegurl')) {
     video.addEventListener('canplay',function() {
     video.play();

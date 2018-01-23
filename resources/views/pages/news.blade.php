@@ -12,17 +12,10 @@
                         $feed=$feed->get_items(); 
                     @endphp
 
-                    @for($i = 0; $i < 20; $i++)
-
-                    @if($i < 10)
+                    @for($i = 0; $i < sizeof($feed); $i++)
                         <a href="{{ $feed[$i]->get_permalink() }}"><b style="font-size: 15pt;">{{ $feed[$i]->get_title() }}</b></a><br>
                         {{ $feed[$i]->get_description() }}<br>
                         {{ $feed[$i]->get_date() }}<br><br>
-                    @endif
-
-                        <a href="{{ $feed1[$i]->get_permalink() }}"><b style="font-size: 15pt;">{{ $feed1[$i]->get_title() }}</b></a><br>
-                        {{ $feed1[$i]->get_description() }}<br>
-                        {{ $feed1[$i]->get_date() }}<br><br>
                     @endfor
                 </div>
             </div>
