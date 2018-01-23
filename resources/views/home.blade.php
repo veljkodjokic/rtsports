@@ -6,6 +6,7 @@
         #kvadrat{
             margin: 0 auto;
             width: 80%;
+            margin-bottom: 7px;
         }
     }
 
