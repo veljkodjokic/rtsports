@@ -34,6 +34,8 @@
     </div>
 </div>
 <div class="side_players_bottom">@include('partials.channel_meni_content')</div>
+
+<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
 <script>
   if(Hls.isSupported()) {
     var video = document.getElementById('video');
