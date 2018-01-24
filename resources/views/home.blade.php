@@ -17,20 +17,6 @@
         }
     }
 
-    #game-channel{
-    font-family: Calibri;
-    display: inline-block;
-    position: relative;
-    float: left;
-    text-align: center;
-    font-size: 16pt;
-    font-weight: 15;
-    height: 25%;
-    width:100%;
-    white-space:nowrap;
-}
-
-
     #game-live{
     font-family: Calibri;
     display: inline-block;
@@ -105,7 +91,7 @@
   max-height:90%;" id="logo-img"></div>
                                     <div id="team-name">{{ $name1 }}</div>
                                 </div>
-                                <div id="game-info" style="height: 100%">
+                                <div id="game-info">
                                     <div id="game-channel">Channel #{{ $stream->id }}</div>
                                     <div id="game-time" @if($stream->Live()) style="color: red;" @endif>{{ $time }}<raw style="font-size: 15pt; font-weight: 15;"> UTC +1</raw></div>
                                     <div id="game-date" @if($stream->Live()) style="color: red;" @endif>{{ $day }}</div>
