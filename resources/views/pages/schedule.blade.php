@@ -14,7 +14,7 @@
     color: #636b6f;
     font-family: 'Raleway', sans-serif;
     font-weight: 70; 
-    font-size: 18pt; 
+    font-size: 17pt; 
     text-align: left; 
     overflow-x: scroll;
   }
@@ -42,6 +42,17 @@
                         <div class="alert alert-success">
                             {{ session('status') }}
                         </div>
+                    @endif
+
+                    @if(count($errors) > 0)
+                    <div class="alert alert-danger">
+                        <strong>Whoops!</strong> There were some problems with your input.<br><br>
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
                     @endif
 
                     <table style="border-collapse: collapse; width: 100%; ">
@@ -81,6 +92,29 @@
                         <td>{!! Form::submit('ADD',['style'=>'color:green;']) !!}</td>
                       </tr>
                       {!! Form::close() !!}
+
+                      {!! Form::open(['url'=>'/admin/add_event', 'method'=>'POST','enctype' => 'multipart/form-data']) !!}
+                      {!! Form::hidden('sport','ufc') !!}
+                      <tr>
+                        <th>UFC</th>
+                      </tr>
+                      <tr>
+                        <td colspan="9">
+                          <table style="border-collapse: collapse; width: 100%; ">
+                            <tr>
+                              <td>{!! Form::text('day','',['id'=>'day2', 'style'=>'max-width:150px;', 'placeholder'=>'Date']) !!}</td>
+                              <td>{!! Form::text('time','',['id'=>'hour', 'style'=>'max-width:150px;', 'placeholder'=>'Time']) !!}</td>
+                              <td>{!! Form::text('title','',['id'=>'title', 'style'=>'width:300px;', 'placeholder'=>'Title']) !!}</td>
+                              <td style="overflow: hidden; max-width: 100px;">{!! Form::file('cover','',['id'=>'cover', 'style'=>'max-width:150px;', 'placeholder'=>'Select cover']) !!}</td>
+                              <td colspan="2">{!! Form::select('live',[1=>'live',0=>'replay'],['id'=>'live', 'style'=>'max-width:100px;']) !!}</td>
+                              <td>ON</td>
+                              <td>{!! Form::select('stream',$range,['style'=>'max-width:150px;', 'placeholder'=>'']) !!}</td>
+                              <td>{!! Form::submit('ADD',['style'=>'color:green;']) !!}</td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                      {!! Form::close() !!}
                       @endif
 
                       @foreach($events as $event)
@@ -100,22 +134,27 @@
                       $hour = \Carbon\Carbon::parse($event->time)->format('H:i');
                       $weekday = $weekMap[$dayOfTheWeek];
                       $date = \Carbon\Carbon::parse($event->day)->format('d. M');
-
+                      $sport=$event->sport;
+                      if($sport == 'nba' || $sport == 'nhl'){
                       $team1=App\Team::where('team',$event->team1)->get()[0]['name'];
                       $team2=App\Team::where('team',$event->team2)->get()[0]['name'];
 
-                      $sport=App\Team::where('team',$event->team1)->get()[0]['sport'];
-
                       $png1=App\Team::where('team',$event->team1)->get()[0]['team'];
                       $png2=App\Team::where('team',$event->team2)->get()[0]['team'];
+                      }
                       @endphp
                       @if($event->Relevant())
                         <tr>
                           <td>{{ $weekday }} {{ $date }}</td>
                           <td>{{ $hour }}</td>
-                          <td style="text-align: center;"><img @if($sport == 'nhl') src="/pics/nhl_teams/{{ $png1 }}.png" @else src="/pics/teams/{{ $png1 }}.png" @endif><br>{{ $team1 }}</td>
-                          <td style="font-weight: 50; font-size: 25pt;">@</td>
-                          <td style="text-align: center;"><img @if($sport == 'nhl') src="/pics/nhl_teams/{{ $png2 }}.png" @else src="/pics/teams/{{ $png2 }}.png" @endif><br>{{ $team2 }}</td>
+                          @if($sport == 'ufc')
+                              <td style="text-align: center;">{{ $event->team1 }}</td>
+                              <td colspan="2"><img src="/pics/ufc/{{ $event->team2 }}" style="width: 200px; height: 70px;"></td>
+                          @else
+                            <td style="text-align: center;"><img @if($sport == 'nhl') src="/pics/nhl_teams/{{ $png1 }}.png" @else src="/pics/teams/{{ $png1 }}.png" @endif><br>{{ $team1 }}</td>
+                            <td style="font-weight: 50; font-size: 25pt;">@</td>
+                            <td style="text-align: center;"><img @if($sport == 'nhl') src="/pics/nhl_teams/{{ $png2 }}.png" @else src="/pics/teams/{{ $png2 }}.png" @endif><br>{{ $team2 }}</td>
+                          @endif
                           <td style="text-align: left; color: red;">@if($event->live) LIVE @else REPLAY @endif</td>
                           <td style="text-align: left;">ON</td>
                           <td><a href="/game{{ $event->stream_id }}">Channel#{{ $stream->id }}</a></td>
@@ -148,6 +187,15 @@
 <script type="text/javascript">
   $(function() {
     $( "#day1" ).datepicker({
+      changeMonth: true,
+      changeYear: true,
+      format: 'yyyy-m-d'
+    });
+  });
+</script> 
+<script type="text/javascript">
+  $(function() {
+    $( "#day2" ).datepicker({
       changeMonth: true,
       changeYear: true,
       format: 'yyyy-m-d'

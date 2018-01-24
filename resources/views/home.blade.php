@@ -92,6 +92,7 @@
                                     <div id="team-name">{{ $name1 }}</div>
                                 </div>
                                 <div id="game-info">
+                                    <div id="game-channel">Channel #{{ $stream->id }}</div>
                                     <div id="game-time" @if($stream->Live()) style="color: red;" @endif>{{ $time }}<raw style="font-size: 15pt; font-weight: 15;"> UTC +1</raw></div>
                                     <div id="game-date" @if($stream->Live()) style="color: red;" @endif>{{ $day }}</div>
                                     <div id="game-live"> @if(!$event->live) REPLAY @endif</div>

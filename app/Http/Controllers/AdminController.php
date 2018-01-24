@@ -38,14 +38,43 @@ class AdminController extends Controller
     public function postAddEvent(Request $request)
     {
         $event = new Event;
+
+        if($request->sport == 'ufc'){
+            $event->day = $request->day;
+            $event->time = $request->time;
+            $event->team1 = $request->title;
+
+            $this->validate($request, [
+            'cover' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            ]);
+
+            $cover = $request->file('cover');
+
+            $name = Carbon::now()->format('YmdHs').'.'.$cover->getClientOriginalExtension();
+
+            $event->team2=$name;
+
+            $destinationPath = public_path('/pics/ufc');
+            $cover->move($destinationPath, $name);
+
+            $event->stream_id = $request->stream;
+            $event->live = $request->live;
+            $event->sport='ufc';
+        }
+        else {
+
         $event->day = $request->day;
         $event->time = $request->time;
+        
         $event->team1 = $request->team1;
         $event->team2 = $request->team2;
         $event->stream_id = $request->stream;
         $event->live = $request->live;
+
         if($request->sport == 'nhl')
             $event->sport='nhl';
+        }
+    
         $event->save();
         return \Redirect::back();
     }

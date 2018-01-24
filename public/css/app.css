@@ -119,8 +119,8 @@ td, th {
 	display: inline-block;
 	position: relative;
 	float: left;
-	top:25%;
-	height: 75%;
+	top:0;
+	height: 100%;
 	width:42%;
 }
 
@@ -161,7 +161,20 @@ td, th {
 	text-align: center;
 	font-size: 16pt;
 	font-weight: 15;
-	height: 33%;
+	height: 25%;
+	width:100%;
+	white-space:nowrap;
+}
+
+#game-channel{
+	font-family: Calibri;
+	display: inline-block;
+	position: relative;
+	float: left;
+	text-align: center;
+	font-size: 16pt;
+	font-weight: 15;
+	height: 25%;
 	width:100%;
 	white-space:nowrap;
 }
@@ -174,7 +187,7 @@ td, th {
 	text-align: center;
 	font-size: 15pt;
 	font-weight: 15;
-	height: 33%;
+	height: 25%;
 	width:100%;
 }
 
