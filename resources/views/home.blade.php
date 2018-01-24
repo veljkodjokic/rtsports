@@ -25,7 +25,7 @@
     text-align: center;
     font-size: 16pt;
     font-weight: 15;
-    height: 25%;
+    height: 20%;
     width:100%;
     white-space:nowrap;
 }
