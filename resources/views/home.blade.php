@@ -17,6 +17,20 @@
         }
     }
 
+    #game-channel{
+    font-family: Calibri;
+    display: inline-block;
+    position: relative;
+    float: left;
+    text-align: center;
+    font-size: 16pt;
+    font-weight: 15;
+    height: 25%;
+    width:100%;
+    white-space:nowrap;
+}
+
+
     #game-live{
     font-family: Calibri;
     display: inline-block;
