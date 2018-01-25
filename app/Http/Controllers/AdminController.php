@@ -54,8 +54,8 @@ class AdminController extends Controller
             $name = Carbon::now()->format('YmdHs').'.'.$cover->getClientOriginalExtension();
 
             $event->team2=$name;
-            dd($event);
-            $destinationPath = public_path('/pics/ufc');
+
+            $destinationPath = public_path('/pics/ufc'); dd($destinationPath);
             $cover->move($destinationPath, $name);
             
             $event->stream_id = $request->stream;
