@@ -57,7 +57,7 @@ class AdminController extends Controller
 
             $event->team2=$name;
 
-            $destinationPath = public_path('pics\ufc');
+            $destinationPath = '/mnt/ufc'; //public_path('pics\ufc');
             
             $cover->move($destinationPath, $name);
             
