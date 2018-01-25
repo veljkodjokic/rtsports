@@ -110,7 +110,7 @@
                                     <div id="game-live"> @if(!$event->live) REPLAY @endif</div>
                                 </div>
                                 <div id="team-rigth">
-                                    <div id="team-logo"><img @if($event['sport'] == 'nhl') src="/pics/nhl_teams/{{ $event['team2'] }}.png" @else src="/pics/teams/{{ $event['team2'] }}.png" @endif style="max-width:200px; max-height:100px; " id="logo-img"></div>
+                                    <div id="team-logo"><img @if($event['sport'] == 'nhl') src="/pics/nhl_teams/{{ $event['team2'] }}.png" @else src="/pics/teams/{{ $event['team2'] }}.png" @endif style="width:200px; height:100px; " id="logo-img"></div>
                                     <div id="team-name">{{ $name2 }}</div>
                                 </div>
                                 @else
