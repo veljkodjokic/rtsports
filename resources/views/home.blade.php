@@ -96,7 +96,7 @@
                         $time=Carbon\Carbon::parse($event['time'])->format('H:i');
                         $day=Carbon\Carbon::parse($event['day'])->format('m/d');
                     @endphp
-                        <div id="kvadrat" @if($stream->Live()) style="font-color: red;" @endif>
+                        <div id="kvadrat" @if($stream->Live()) style="font-color: red;" @endif @if($event->sport == 'ufc') title="{{ $event->team1 }}" @endif>
                             <a id="game-link" href="/game{{$stream->id}}">
                                 @if(!($event->sport == 'ufc'))
                                 <div id="team-left">
@@ -114,8 +114,7 @@
                                     <div id="team-name">{{ $name2 }}</div>
                                 </div>
                                 @else
-                                    <div id="logo-img"><img src="/mnt/ufc/{{ $event->team2 }}" style="max-width:100%; height:90%; margin: 0 auto;"></div>
-                                    <div class="ufc-title">{{ $event->team1 }}</div>
+                                    <div id="logo-img"><img src="/mnt/ufc/{{ $event->team2 }}" style="width:100%; max-height:180px; position:relative; margin: 0 auto;"></div>
                                 @endif
                             </a>
                         </div>
