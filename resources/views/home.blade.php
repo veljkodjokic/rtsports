@@ -17,6 +17,18 @@
         }
     }
 
+    .ufc-title{
+        font-family: Calibri;
+        display: inline-block;
+        position: relative;
+        float: left;
+        text-align: center;
+        font-size: 15pt;
+        font-weight:15;
+        height: 10%;
+        width:100%;
+    }
+
     #game-live{
     font-family: Calibri;
     display: inline-block;
@@ -98,12 +110,12 @@
                                     <div id="game-live"> @if(!$event->live) REPLAY @endif</div>
                                 </div>
                                 <div id="team-rigth">
-                                    <div id="team-logo"><img @if($event['sport'] == 'nhl') src="/pics/nhl_teams/{{ $event['team2'] }}.png" @else src="/pics/teams/{{ $event['team2'] }}.png" @endif style="max-width:90%; max-height:90%; " id="logo-img"></div>
+                                    <div id="team-logo"><img @if($event['sport'] == 'nhl') src="/pics/nhl_teams/{{ $event['team2'] }}.png" @else src="/pics/teams/{{ $event['team2'] }}.png" @endif style="max-width:200px; max-height:100px; " id="logo-img"></div>
                                     <div id="team-name">{{ $name2 }}</div>
                                 </div>
                                 @else
                                     <div id="logo-img"><img src="/mnt/ufc/{{ $event->team2 }}" style="max-width:100%; max-height:50%; margin: 0 auto;"></div>
-                                    <div id="ufc-title">{{ $event->team1 }}</div>
+                                    <div class="ufc-title">{{ $event->team1 }}</div>
                                 @endif
                             </a>
                         </div>

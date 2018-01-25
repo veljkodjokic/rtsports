@@ -197,16 +197,4 @@ td, th {
 	margin-right: auto;
 }
 
-#ufc-title{
-	font-family: Calibri;
-	display: inline-block;
-	position: relative;
-	float: left;
-	text-align: center;
-	font-size: 20pt;
-	font-weight: 20;
-	height: 10%;
-	width:100%;
-}
-
 #game-link:hover{ color:black; }
