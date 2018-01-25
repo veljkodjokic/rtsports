@@ -149,7 +149,7 @@
                           <td>{{ $hour }}</td>
                           @if($sport == 'ufc')
                               <td style="text-align: center;">{{ $event->team1 }}</td>
-                              <td colspan="2"><img src="/pics/ufc/{{ $event->team2 }}" style="width: 200px; height: 70px;"></td>
+                              <td colspan="2"><img src="/mnt/ufc/{{ $event->team2 }}" style="width: 200px; height: 70px;"></td>
                           @else
                             <td style="text-align: center;"><img @if($sport == 'nhl') src="/pics/nhl_teams/{{ $png1 }}.png" @else src="/pics/teams/{{ $png1 }}.png" @endif><br>{{ $team1 }}</td>
                             <td style="font-weight: 50; font-size: 25pt;">@</td>
