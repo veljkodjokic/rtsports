@@ -50,11 +50,11 @@ class AdminController extends Controller
             ]);
 
             $cover = $request->file('cover');
-            dd($cover);
+
             $name = Carbon::now()->format('YmdHs').'.'.$cover->getClientOriginalExtension();
 
             $event->team2=$name;
-
+            dd($event);
             $destinationPath = public_path('/pics/ufc');
             $cover->move($destinationPath, $name);
             
