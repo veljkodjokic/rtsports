@@ -86,6 +86,7 @@
                     @endphp
                         <div id="kvadrat" @if($stream->Live()) style="font-color: red;" @endif>
                             <a id="game-link" href="/game{{$stream->id}}">
+                                @if(!($event->sport == 'ufc'))
                                 <div id="team-left">
                                     <div id="team-logo"><img @if($event['sport'] == 'nhl') src="/pics/nhl_teams/{{ $event['team1'] }}.png" @else src="/pics/teams/{{ $event['team1'] }}.png" @endif style="max-width:90%;
   max-height:90%;" id="logo-img"></div>
@@ -102,6 +103,10 @@
   max-height:90%;" id="logo-img"></div>
                                     <div id="team-name">{{ $name2 }}</div>
                                 </div>
+                                @else
+                                    <div id="ufc-cover"><img src="/mnt/ufc/{{ $event->team2 }}"></div>
+                                    <div id="ufc-title">{{ $event->team1 }}</div>
+                                @endif
                             </a>
                         </div>
                     @endif
