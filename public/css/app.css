@@ -197,14 +197,6 @@ td, th {
 	margin-right: auto;
 }
 
-#ufc-cover{
-	display: inline-block;
-	position: relative;
-	float: left;
-	height: 90%;
-	width:100%;
-}
-
 #ufc-title{
 	font-family: Calibri;
 	display: inline-block;
