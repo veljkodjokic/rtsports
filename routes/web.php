@@ -75,15 +75,4 @@ Route::post('/edit_pass', 'AccountController@postEditPass')->name('edit_pass');
 Route::post('/delete_acc', 'AccountController@postDeleteAccount')->name('delete_acc');
 
 //Image
-Route::get('/mnt/ufc/{filename}', function ($filename)
-{
-    $path = '/mnt/ufc' . '/' . $filename;
-
-    $file = File::get($path);
-    $type = File::mimeType($path);
-
-    $response = Response::make($file, 200);
-    $response->header("Content-Type", $type);
-
-    return $response;
-});
+Route::get('/mnt/ufc/{filename}', 'HomeController@getImage');
