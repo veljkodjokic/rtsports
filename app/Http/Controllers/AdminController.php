@@ -98,6 +98,13 @@ class AdminController extends Controller
     {
         $id=$request->id;
         $event = Event::find($id);
+
+        if($event->sport == 'ufc'){
+            $file = $event->team2;
+            $filename = '/mnt/ufc/'.$file;
+            File::delete($filename);
+        }
+
         $event->delete();
         return \Redirect::back();
     }
