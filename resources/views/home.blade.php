@@ -114,7 +114,7 @@
                                     <div id="team-name">{{ $name2 }}</div>
                                 </div>
                                 @else
-                                    <div id="logo-img"><img src="/mnt/ufc/{{ $event->team2 }}" style="max-width:100%; height:50%; margin: 0 auto;"></div>
+                                    <div id="logo-img"><img src="/mnt/ufc/{{ $event->team2 }}" style="max-width:100%; height:90%; margin: 0 auto;"></div>
                                     <div class="ufc-title">{{ $event->team1 }}</div>
                                 @endif
                             </a>
