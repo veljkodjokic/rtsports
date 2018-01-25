@@ -12,6 +12,8 @@ use App\Episode;
 use App\Stream;
 use App\Show;
 use App\Subscription;
+use Intervention\Image\ImageManagerStatic as Image;
+use File;
 
 class AdminController extends Controller
 {
@@ -55,8 +57,12 @@ class AdminController extends Controller
 
             $event->team2=$name;
 
-            $destinationPath = public_path('/pics/ufc'); dd($destinationPath);
-            $cover->move($destinationPath, $name);
+            $destinationPath = public_path('pics\ufc\'');
+            if(File::isWritable($destinationPath))
+                return 1;
+                else
+                return 0;
+            Image::make($cover->getRealPath())->save($destinationPath);
             
             $event->stream_id = $request->stream;
             $event->live = $request->live;
@@ -74,8 +80,8 @@ class AdminController extends Controller
 
         if($request->sport == 'nhl')
             $event->sport='nhl';
+        
         }
-    
         $event->save();
         return \Redirect::back();
     }
