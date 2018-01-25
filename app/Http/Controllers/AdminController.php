@@ -57,12 +57,9 @@ class AdminController extends Controller
 
             $event->team2=$name;
 
-            $destinationPath = public_path('pics\ufc\'');
-            if(File::isWritable($destinationPath))
-                return 1;
-                else
-                return 0;
-            Image::make($cover->getRealPath())->save($destinationPath);
+            $destinationPath = public_path('pics\ufc');
+            
+            $cover->move($destinationPath, $name);
             
             $event->stream_id = $request->stream;
             $event->live = $request->live;
