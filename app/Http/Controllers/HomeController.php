@@ -33,19 +33,6 @@ class HomeController extends Controller
         return view('home')->with('streams',$streams);
     }
 
-    public function getImage($filename)
-    {
-        $path = '/mnt/ufc' . '/' . $filename;
-
-        $file = File::get($path);
-        $type = File::mimeType($path);
-
-        $response = Response::make($file, 200);
-        $response->header("Content-Type", $type);
-
-        return $response;
-    }
-
     public function getSchedule()
     {
         $events= Event::orderBy('day')->orderBy('time')->get();
