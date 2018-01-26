@@ -54,6 +54,24 @@
                       <tr>
                       	<td style="font-size: 20pt; text-align: center;"><b><a href="https://www.paypal.me/RTSports/29.99">Season Pass $29.99</a></b></td>
                       </tr>
+
+                      <tr>
+                        <td rowspan=3>
+                            <div class="card-container">
+                                <div id="card">
+                                    <img src="/pics/bitcoin.png" class="img-card">
+                                </div>
+                            </div>
+                        </td>
+
+                        <td style="font-size: 20pt;"><b style="color: black">BTC: 3CG5Nb6QmMvzRFrxs85m1qzUyGmE7yx8f7</b><a href="#" style="font-size: 15pt" onclick="btc()"> Scan the QR code</a></td>
+                      </tr>
+                      <tr>
+                        <td style="font-size: 20pt;"><b style="color: black">ETH: 0xd7accbb54d30004dc2ecec05898aea99ef3bc846</b><a href="#" href="#" style="font-size: 15pt" onclick="eth()"> Scan the QR code</a></td>
+                      </tr>
+                      <tr>
+                        <td style="font-size: 20pt;"><b style="color: black">XPR:  rE1sdh25BJQ3qFwngiTBwaq3zPGGYcrjp1<br>XPR Destination Tag: 37069</b><a href="#" href="#" style="font-size: 15pt" onclick="xpr()"> Scan the QR code</a></td>
+                      </tr>
                 	</table>
                     
 
@@ -62,5 +80,23 @@
         </div>
 </div>
 @include('partials/auth_check')
+
+<script type="text/javascript">
+    function btc(){
+        swal({
+            width: 350,
+            padding: 350,
+            background: 'url(https://rtsports.us/pics/btcqr.png)'
+        });
+    }
+
+    function eth(){
+        swal('eth');
+    }
+
+    function xpr(){
+        swal('xpr');
+    }
+</script>
 
 @endsection
