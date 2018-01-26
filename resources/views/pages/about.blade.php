@@ -36,9 +36,9 @@
 
                         No. RTSports is a service that values your anonymity. Furthermore, your subscription will not automatically renew until you choose to do so on your account in your profile.<br><br>
 
-                    <b>What cards can I use to signup?</b><br>
+                    <b>What methods can I use to signup?</b><br>
     
-                        We accept both credit card and debit card payments from Visa, MasterCard, Discover and American Express, and PayPal.<br><br>
+                        We accept both credit card and debit card payments from Visa, MasterCard, Discover and American Express, as well as PayPal and cryptocurrency.<br><br>
 
                     <b>What devices can I watch RTSports on?</b><br>
                    
