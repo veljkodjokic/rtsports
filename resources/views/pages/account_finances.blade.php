@@ -84,18 +84,29 @@
 <script type="text/javascript">
     function btc(){
         swal({
-            width: 350,
-            padding: 350,
+            width: 185,
+            padding: 85,
+            showConfirmButton: false,
             background: 'url(https://rtsports.us/pics/btcqr.png)'
         });
     }
 
     function eth(){
-        swal('eth');
+        swal({
+            width: 185,
+            padding: 85,
+            showConfirmButton: false,
+            background: 'url(https://rtsports.us/pics/ethqr.png)'
+        });
     }
 
     function xpr(){
-        swal('xpr');
+        swal({
+            width: 185,
+            padding: 85,
+            showConfirmButton: false,
+            background: 'url(https://rtsports.us/pics/xprqr.png)'
+        });
     }
 </script>
 
