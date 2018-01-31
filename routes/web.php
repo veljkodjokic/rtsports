@@ -58,6 +58,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
 	Route::get('/admin/log_users', 'AdminController@getUserLog')->name('/admin/log_users');
 	Route::post('/admin/add_event', 'AdminController@postAddEvent')->name('/admin/add_event');
 	Route::post('/admin/del_event', 'AdminController@postDelEvent')->name('/admin/del_event');
+	Route::post('/admin/del_user', 'AdminController@postDelUser')->name('/admin/del_user');
 	Route::post('/admin/add_episode', 'AdminController@postAddEpisode')->name('/admin/add_episode');
 	Route::post('/admin/search_logsa', 'AdminController@postSearchLogsa')->name('/admin/search_logs');
 	Route::post('/admin/search_logsd', 'AdminController@postSearchLogsd')->name('/admin/search_logs');
@@ -66,6 +67,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
 	Route::get('/admin/edit_channels', 'AdminController@getEditChannels')->name('/admin/edit_channels');
 	Route::post('/admin/edit_stream', 'AdminController@postEditStream')->name('/admin/edit_stream');
 	Route::post('/admin/add_stream', 'AdminController@postAddStream')->name('/admin/add_stream');
+	Route::post('/admin/del_logs', 'AdminController@postDelLogs')->name('/admin/del_logs');
 });
 
 //Edit account

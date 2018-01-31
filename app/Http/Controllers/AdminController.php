@@ -23,6 +23,22 @@ class AdminController extends Controller
         $this->middleware('admin');
     }
 
+    public function postDelUser(Request $request)
+    {
+        $user=User::Find($request->id);
+        $user->Delete();
+        \Session::flash("usr_del");
+        return \Redirect::back();
+    }
+
+    public function postDelLogs()
+    {
+        UserLog::truncate();
+
+        \Session::flash("logs_del");
+        return \Redirect::Back();
+    }
+
     public function getAuthUser()
     {
     	$users=User::all();

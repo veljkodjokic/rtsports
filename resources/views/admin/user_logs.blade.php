@@ -30,6 +30,10 @@
                   <div style="margin-left: 60%; position: relative;">
                     {!! Form::submit('ORDER ASC',['style'=>'color:green;', 'onclick'=>'asc()']) !!}
                     {!! Form::submit('ORDER DESC',['style'=>'color:green;', 'onclick'=>'desc()']) !!}
+
+                    {!! Form::open(['url'=>'/admin/del_logs', 'method'=>'POST']) !!}
+                    {!! Form::submit('DELETE LOGS',['style'=>'color:red;', 'onclick'=>'del()']) !!}
+                    {!! Form::close() !!}
                     </div>
                     <table style="border-collapse: collapse; width: 100%;">
                       <tr>
@@ -85,6 +89,12 @@
     });
   };
 </script>
+
+@if(Session::has('logs_del'))
+<script type="text/javascript">
+        swal ( " " ,  "You have successfully deleted all user logs!" ,  "success" )
+</script>
+@endif
 
 @include('partials/auth_check')
 @endsection
