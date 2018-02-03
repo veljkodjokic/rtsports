@@ -53,19 +53,19 @@
 
                     <div id="kvadrat" style="vertical-align: top; margin-bottom: 7px;">
                         <a href="/game12">
-                            <img src="/pics/ufcpass.png" style="width: 100%; height: 100%;">
+                            <img src="/pics/ufcpass.png" class="calm center" style="max-width: 100%; max-height: 100%;">
                         </a>
                     </div>
 
                     <div id="kvadrat" style="vertical-align: top; margin-bottom: 7px;">
                         <a href="/game8">
-                            <img src="/pics/nbatv.png" style="width: 100%; height: 100%;">
+                            <img src="/pics/nbatv.png" class="calm center" style="max-width: 100%; max-height: 100%;">
                         </a>
                     </div>
 
                     <div id="kvadrat" style="vertical-align: top">
                         <a href="/game4">
-                            <img src="/pics/nhltv.png" style="width: 100%; height: 100%;">
+                            <img src="/pics/nhltv.png" class="calm center" style="max-width: 100%; max-height: 100%;">
                         </a>
                     </div>
 
