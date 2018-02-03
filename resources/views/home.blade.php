@@ -39,7 +39,7 @@
             font-size: 10pt;
         }
         #team-name{
-            font-size: 10pt;
+            font-size: 9pt;
         }
     }
 
