@@ -10,7 +10,8 @@
 #kvadrat {
     position: relative;
     width: 211px;
-    height: 106px;
+
+    height:auto;
     text-align: left;
     padding:10px;
     margin:2px;
