@@ -95,7 +95,9 @@
                     <div id="team-name">{{ $name2 }}</div>
                 </div> 
                 @else
-                    <div id="kvadrat"><img src="/mnt/ufc/{{ $event->team2 }}"  class="calm center" style="max-width: 100%; max-height: 100%;"></div>
+                    <div id="kvadrat" style="margin: 0 auto;  width: 100%; max-width: 1028px; height: 160px; margin-bottom: -20px;">
+                        <img src="/mnt/ufc/{{ $event->team2 }}"  class="calm center" style="max-width: 100%; max-height: 100%;">
+                    </div>
                 @endif
             </a>
         </div>
