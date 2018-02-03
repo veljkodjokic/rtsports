@@ -22,6 +22,7 @@
     text-shadow:none;
     color:transparent;
     height:200px;
+	overflow: hidden;
 }
 
 .center {
@@ -104,6 +105,13 @@ a, u {
 @media only screen and (min-width: 1500px) {
     .side_players_bottom {
 		display: none;
+	}
+}
+
+@media only screen and (max-width: 440px){
+	.panel-heading{
+		white-space: nowrap;
+		font-size: 6pt;
 	}
 }
    

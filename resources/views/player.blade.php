@@ -10,12 +10,12 @@
             <div class="panel panel-default">
                 <div class="panel-heading" style="border-bottom: 10px;">
                     <div style="float: left; width: 33%; text-align: center; position: relative;">
-                        @if($stream->id != 1)<a href="/game{{ ($stream->id)-1 }}"><< Previous channel</a> 
+                        @if($theStream->id != 1)<a href="/game{{ ($theStream->id)-1 }}"><< Previous channel</a> 
                         @else First channel
                         @endif</div>
-                    <div style="float: left; width: 33%; text-align: center; position: relative;">Channel #{{ $stream->id }}</div>
+                    <div style="float: left; width: 33%; text-align: center; position: relative;">Channel #{{ $theStream->id }}</div>
                     <div style="float: left; width: 33%; text-align: center; position: relative;">
-                        @if($stream->id != App\Stream::count())<a href="/game{{ ($stream->id)+1 }}">Next cahnnel >></a>
+                        @if($theStream->id != App\Stream::count())<a href="/game{{ ($theStream->id)+1 }}">Next cahnnel >></a>
                         @else Last channel
                         @endif</div>
                 </div>
@@ -27,7 +27,7 @@
                         </div>
                     @endif
 
-                    <video id="video" width="100%" height="50%" style="margin:0 auto;" controls preload="none" src="{{ $stream->source }}"></video>
+                    <video id="video" width="100%" height="50%" style="margin:0 auto;" controls preload="none" src="{{ $theStream->source }}"></video>
                 </div>
             </div>
         </div>
@@ -41,7 +41,7 @@
     var video = document.getElementById('video');
     video.src = '';
     var hls = new Hls();
-    hls.loadSource('{{ $stream->source }}');
+    hls.loadSource('{{ $theStream->source }}');
     hls.attachMedia(video);
     hls.on(Hls.Events.MANIFEST_PARSED,function() {
       video.play();

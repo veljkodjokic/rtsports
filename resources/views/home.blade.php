@@ -2,8 +2,6 @@
 
 @section('content')
 <style type="text/css">
-
-
     @media only screen and (max-width: 990px){
         #team-name{
             font-size: 14pt;

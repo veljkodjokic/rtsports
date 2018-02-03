@@ -16,7 +16,7 @@ class StreamController extends Controller
 
     public function getStream($id)
     {
-    	$stream = Stream::find($id);
+    	$theStream = Stream::find($id);
     	$streams = Stream::where('id', '!=', $id)->get();
 
         $user=\Auth::user();
@@ -25,6 +25,6 @@ class StreamController extends Controller
             \Session::flash('trl');
         
 
-    	return view('player')->with(['streams'=>$streams, 'stream'=>$stream]);
+    	return view('player')->with(['streams'=>$streams, 'theStream'=>$theStream]);
     }
 }
