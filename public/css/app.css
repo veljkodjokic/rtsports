@@ -106,12 +106,6 @@ a, u {
 		display: none;
 	}
 }
-
-@media only screen and (max-width: 990px){
-	#team-name{
-		font-size: 3pt;
-	}
-}
    
 
 td, th {
