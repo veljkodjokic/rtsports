@@ -2,6 +2,14 @@
 
 @section('content')
 <style type="text/css">
+
+
+    @media only screen and (max-width: 990px){
+        #team-name{
+            font-size: 14pt;
+        }
+    }
+    
     @media only screen and (max-width: 770px) {
         #kvadrat{
             margin: 0 auto;
@@ -16,6 +24,25 @@
             width:49%;  
         }
     }
+
+    @media only screen and (max-width: 440px){
+        #game-channel{
+            font-size: 10pt;
+        }
+        #game-time{
+            font-size: 10pt;
+        }
+        #game-live{
+            font-size: 10pt;
+        }
+        #game-date{
+            font-size: 10pt;
+        }
+        #team-name{
+            font-size: 10pt;
+        }
+    }
+
 
     #game-live{
     font-family: Calibri;
@@ -59,7 +86,7 @@
 
                     <div id="kvadrat" style="vertical-align: top; margin-bottom: 7px;">
                         <a href="/game8">
-                            <img src="/pics/nbatv.png" class="calm center" style="max-width: 100%; max-height: 100%; display: block;">
+                            <img src="/pics/nbatv.png" class="calm center" style="max-width: 100%; max-height: 100%;">
                         </a>
                     </div>
 
@@ -93,7 +120,7 @@
                                 </div>
                                 <div id="game-info">
                                     <div id="game-channel">Channel #{{ $stream->id }}</div>
-                                    <div id="game-time" @if($stream->Live()) style="color: red;" @endif>{{ $time }}<raw style="font-size: 15pt; font-weight: 15;"> UTC +1</raw></div>
+                                    <div id="game-time" @if($stream->Live()) style="color: red;" @endif>{{ $time }}<raw style="font-weight: 15;"> UTC +1</raw></div>
                                     <div id="game-date" @if($stream->Live()) style="color: red;" @endif>{{ $day }}</div>
                                     <div id="game-live"> @if(!$event->live) REPLAY @endif</div>
                                 </div>
