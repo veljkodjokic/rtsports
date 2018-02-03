@@ -25,7 +25,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.0.6/sweetalert2.min.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.0.6/sweetalert2.min.css" rel="stylesheet">
 
-
 </head>
 <body style="background-color: #231F20;">
     <div id="app" >
@@ -80,19 +79,19 @@
                             </li>
                             @endif
 
-                            <li><a href="/channels">Channels</a></li>
+                            <li><a class="fix-link" href="/channels">Channels</a></li>
 
-                            <li><a href="/news">News</a></li>
+                            <li><a class="fix-link" href="/news">News</a></li>
 
-                            <li><a href="/reports">Player Reports</a></li>
+                            <li><a class="fix-link" href="/reports">Player Reports</a></li>
 
-                            <li><a href="/highlights">Videos&Highlights</a></li>
+                            <li><a class="fix-link" href="/highlights">Videos&Highlights</a></li>
 
-                            <li><a href="/schedule">Schedule</a></li>
+                            <li><a class="fix-link" href="/schedule">Schedule</a></li>
 
-                            <li><a href="/contact">Contact us</a></li>
+                            <li><a class="fix-link" href="/contact">Contact us</a></li>
 
-                            <li><a href="/FAQ">FAQ</a></li>
+                            <li><a class="fix-link" href="/FAQ">FAQ</a></li>
 
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
@@ -101,15 +100,15 @@
 
                                 <ul class="dropdown-menu">
                                     <li>
-                                        <a href="/account">
+                                        <a class="fix-link" href="/account">
                                             My account
                                         </a>
 
-                                        <a href="/subscriptions">
+                                        <a class="fix-link" href="/subscriptions">
                                             My subscriptions
                                         </a>
 
-                                        <a href="{{ route('logout') }}"
+                                        <a class="fix-link" href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                             Logout

@@ -102,6 +102,20 @@ a, u {
 	}
 }
 
+@media only screen and (max-width: 1200px){
+    .nav>li>a{
+    	padding:15px 7px;
+    	font-size:12px; 
+    }
+}
+
+@media only screen and (max-width: 990px){
+    .nav>li>a{
+    	padding:20px 5px;
+    	font-size:9px; 
+    }
+}
+
 @media only screen and (min-width: 1500px) {
     .side_players_bottom {
 		display: none;
